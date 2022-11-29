@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="ILRepacker" AfterTargets="Build" BeforeTargets="CopyBinaries">
+    <ItemGroup>
+      <InputAssemblies Include="$(OutputPath)\$(AssemblyName).dll" />
+      <InputAssemblies Include="$(OutputPath)\DiscordRPC.dll" />
+      <InputAssemblies Include="$(OutputPath)\MCMv5.dll" />
+    </ItemGroup>
+
+    <!-- ReSharper disable once UnknownTask -->
+    <ILRepack
+      Parallel="true"
+      DebugInfo="$(Configuration.Contains('Debug'))"
+      Internalize="true"
+      InputAssemblies="@(InputAssemblies)"
+      TargetKind="SameAsPrimaryAssembly"
+      OutputFile="$(OutputPath)\$(AssemblyName).dll"
+      LibraryPath="$(OutputPath);$(PkgBannerlord_ReferenceAssemblies_Core)\ref\net472;$(PkgBannerlord_ButterLib)\lib\net472;$(PkgNewtonsoft_Json)\lib\netstandard2.0;" />
+
+    <Delete Files="$(OutputPath)\DiscordRPC.dll"/>
+    <Delete Files="$(OutputPath)\MCMv5.dll"/>
+  </Target>
+</Project>

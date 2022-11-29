@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/BUTR/Bannerlord.XmlSchemas/master/SubModule.xsd" >
+  <Id value="$moduleid$" />
+  <Name value="$modulename$" />
+  <Version value="v$version$" />
+  <DefaultModule value="false" />
+  <ModuleCategory value="Singleplayer"/>
+  <ModuleType value="Community" />
+  <DependedModules>
+    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v$harmonyversion$" />
+    <DependedModule Id="Bannerlord.ButterLib" DependentVersion="v$butterlibversion$" />
+    <DependedModule Id="Native" DependentVersion="v$gameversion$" />
+  </DependedModules>
+  <!-- Community Dependency Metadata -->
+  <!-- https://github.com/BUTR/Bannerlord.BUTRLoader#for-modders -->
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v$harmonyversion$" />
+    <DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" version="v$butterlibversion$" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v$gameversion$.*" />
+  </DependedModuleMetadatas>
+  <SubModules>
+    <!-- Bannerlord Module Loader. Do not change the name! -->
+    <SubModule>
+      <Name value="Bannerlord Module Loader" />
+      <DLLName value="Bannerlord.ModuleLoader.$moduleid$.dll" />
+      <SubModuleClassType value="Bannerlord.ModuleLoader.$moduleidflat$" />
+      <Tags>
+        <Tag key="LoaderFilter" value ="$moduleid$.*.dll" />
+        <Tag key="LoaderSubModuleOrder" value ="MCM.MCMSubModule" />
+        <Tag key="LoaderSubModuleOrder" value ="MCM.Internal.MCMImplementationSubModule" />
+        <Tag key="LoaderSubModuleOrder" value ="Bannerlord.DiscordRichPresence.DiscordSubModule" />
+        <Tag key="LoaderSubModuleOrder" value ="Bannerlord.DiscordRichPresence.TrackingSubModule" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>

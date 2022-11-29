@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bannerlord.DiscordRichPresence", "Bannerlord.DiscordRichPresence\Bannerlord.DiscordRichPresence.csproj", "{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{6EFA16B0-36FC-4574-868F-75F8157D9B42}"
+	ProjectSection(SolutionItems) = preProject
+		..\changelog.txt = ..\changelog.txt
+		..\README.md = ..\README.md
+		..\supported-game-versions.txt = ..\supported-game-versions.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{728FFAFA-FC52-4FF0-BFD1-49A2AC69D326}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{01703098-8C21-46C9-BA5E-DEAB8986110D}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\dotnet-format-daily.yml = ..\.github\workflows\dotnet-format-daily.yml
+		..\.github\workflows\publish.yml = ..\.github\workflows\publish.yml
+		..\.github\workflows\test-build.yml = ..\.github\workflows\test-build.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Beta_Debug|x64 = Beta_Debug|x64
+		Beta_Release|x64 = Beta_Release|x64
+		Stable_Debug|x64 = Stable_Debug|x64
+		Stable_Release|x64 = Stable_Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Beta_Debug|x64.ActiveCfg = Beta_Debug|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Beta_Debug|x64.Build.0 = Beta_Debug|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Beta_Release|x64.ActiveCfg = Beta_Release|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Beta_Release|x64.Build.0 = Beta_Release|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Stable_Debug|x64.ActiveCfg = Stable_Debug|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Stable_Debug|x64.Build.0 = Stable_Debug|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Stable_Release|x64.ActiveCfg = Stable_Release|x64
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E}.Stable_Release|x64.Build.0 = Stable_Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E9086FF-483C-44CB-BEE3-816E88F8CFEF}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{728FFAFA-FC52-4FF0-BFD1-49A2AC69D326} = {6EFA16B0-36FC-4574-868F-75F8157D9B42}
+		{15E39BEE-6DC9-4D11-82F2-B7E8E5E86B9E} = {728FFAFA-FC52-4FF0-BFD1-49A2AC69D326}
+		{01703098-8C21-46C9-BA5E-DEAB8986110D} = {6EFA16B0-36FC-4574-868F-75F8157D9B42}
+	EndGlobalSection
+EndGlobal
