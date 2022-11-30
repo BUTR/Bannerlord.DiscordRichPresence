@@ -1,6 +1,4 @@
-﻿using System;
-
-using Bannerlord.ButterLib.Common.Extensions;
+﻿using Bannerlord.ButterLib.Common.Extensions;
 using Bannerlord.DiscordRichPresence.CampaignBehaviors;
 using Bannerlord.DiscordRichPresence.Utils;
 
@@ -8,6 +6,8 @@ using DiscordRPC;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+
+using System;
 
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
