@@ -1,9 +1,8 @@
-﻿using System;
-
-using Bannerlord.ButterLib.DynamicAPI;
+﻿using Bannerlord.ButterLib.DynamicAPI;
 
 using DiscordRPC;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 using TaleWorlds.CampaignSystem;
@@ -16,7 +15,7 @@ namespace Bannerlord.DiscordRichPresence
     internal sealed class DynamicAPI
     {
         [DynamicAPIMethod("SetPresence")]
-        public static void SetPresence(string details, DateTime? start, DateTime? end)
+        public static void SetPresence(string details, DateTime? start, DateTime? end, bool saveInHistory)
         {
             DiscordSubModule.Instance.SetPresence(new RichPresence
             {
@@ -27,26 +26,23 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = details
                 }
-            });
+            }, saveInHistory);
         }
 
         [DynamicAPIMethod("SetPreviousPresence")]
-        public static void SetPreviousPresence() => DiscordSubModule.Instance.SetPreviousPresence();
+        public static void SetPreviousPresence(bool saveInHistory) => DiscordSubModule.Instance.SetPreviousPresence(saveInHistory);
 
 
         [DynamicAPIMethod("SetPresenceLoading")]
-        public static void SetPresenceLoading() => DiscordSubModule.Instance.SetPresence(PresenceStates.Loading());
+        public static void SetPresenceLoading() => DiscordSubModule.Instance.SetPresence(PresenceStates.Loading(), true);
 
         [DynamicAPIMethod("SetPresenceInMainMenu")]
-        public static void SetPresenceInMainMenu() => DiscordSubModule.Instance.SetPresence(PresenceStates.InMainMenu());
+        public static void SetPresenceInMainMenu() => DiscordSubModule.Instance.SetPresence(PresenceStates.InMainMenu(), true);
 
         [DynamicAPIMethod("SetPresenceInCustomBattle")]
-        public static void SetPresenceInCustomBattle() => DiscordSubModule.Instance.SetPresence(PresenceStates.InCustomBattle());
-
-        [DynamicAPIMethod("SetPresenceInCampaign")]
-        public static void SetPresenceInCampaign(Hero hero) => DiscordSubModule.Instance.SetPresence(PresenceStates.InCampaign(hero));
+        public static void SetPresenceInCustomBattle() => DiscordSubModule.Instance.SetPresence(PresenceStates.InCustomBattle(), true);
 
         [DynamicAPIMethod("SetPresenceInMenu")]
-        public static void SetPresenceInMenu() => DiscordSubModule.Instance.SetPresence(PresenceStates.InMenu());
+        public static void SetPresenceInMenu() => DiscordSubModule.Instance.SetPresence(PresenceStates.InMenu(), true);
     }
 }

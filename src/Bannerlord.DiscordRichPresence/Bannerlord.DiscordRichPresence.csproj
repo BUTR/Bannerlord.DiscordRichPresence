@@ -11,6 +11,7 @@
     <ModuleName>$(MSBuildProjectName)</ModuleName>
     <GameFolder>$(BANNERLORD_GAME_DIR)</GameFolder>
     <Configurations>Stable_Debug;Stable_Release;Beta_Debug;Beta_Release</Configurations>
+    <ModListUploadUrl>$(BANNERLORD_DISCORD_MODLISTUPLOAD_URL)</ModListUploadUrl>
     <!-- Module manually override GameVersion -->
     <!-- <OverrideGameVersion>v1.0.0</OverrideGameVersion> -->
   </PropertyGroup>
@@ -22,6 +23,8 @@
     <MCMVersion>5.3.2</MCMVersion>
     <BUTRModuleLoaderVersion>1.0.1.44</BUTRModuleLoaderVersion>
     <HarmonyExtensionsVersion>3.1.0.68</HarmonyExtensionsVersion>
+    <BUTRSharedVersion>3.0.0.121</BUTRSharedVersion>
+    <BUTRModuleManagerVersion>4.0.150</BUTRModuleManagerVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -42,5 +45,15 @@
     <PackageReference Include="ILRepack" Version="2.1.0-beta1" PrivateAssets="All" />
     <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" PrivateAssets="All" />
   </ItemGroup>
+
+  <Target Name="SetModListUploadUrl" BeforeTargets="BeforeCompile">
+    <ItemGroup Condition="$(ModListUploadUrl) != ''">
+      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+        <_Parameter1>ModListUploadUrl</_Parameter1>
+        <_Parameter2>$(ModListUploadUrl)</_Parameter2>
+      </AssemblyAttribute>
+    </ItemGroup>
+    <Warning Condition="$(ModListUploadUrl) == ''" Text="Environment variable 'BANNERLORD_DISCORD_MODLISTUPLOAD_URL' is not set!"/>
+  </Target>
 
 </Project>

@@ -6,23 +6,23 @@ Note that you can use this code even if `Bannerlord.DiscordRichPresence` is not 
 ```csharp
 internal static class DiscordRichPresenceAPI
 {
-    private static readonly Action<string, DateTime?, DateTime?>? SetPresenceMethod =
-        DynamicAPIProvider.RequestAPIMethod<Action<string, DateTime?, DateTime?>>("Bannerlord.DiscordRichPresence", "SetPresence");
-    private static readonly Action? SetPreviousPresenceMethod =
-        DynamicAPIProvider.RequestAPIMethod<Action>("Bannerlord.DiscordRichPresence", "SetPreviousPresence");
+    private static readonly Action<string, DateTime?, DateTime?, bool>? SetPresenceMethod =
+        DynamicAPIProvider.RequestAPIMethod<Action<string, DateTime?, DateTime?, bool>>("Bannerlord.DiscordRichPresence", "SetPresence");
+    private static readonly Action<bool>? SetPreviousPresenceMethod =
+        DynamicAPIProvider.RequestAPIMethod<Action<bool>>("Bannerlord.DiscordRichPresence", "SetPreviousPresence");
 
     public static void SetPresence(string details, DateTime? start, DateTime? end)
     {
         if (SetPresenceMethod != null)
         {
-            SetPresenceMethod(details, start, end);
+            SetPresenceMethod(details, start, end, true);
         }
     }
     public static void SetPreviousPresence()
     {
         if (SetPreviousPresenceMethod != null)
         {
-            SetPreviousPresence();
+            SetPreviousPresence(true);
         }
     }
 }
@@ -31,27 +31,27 @@ internal static class DiscordRichPresenceAPI
 ```csharp
 internal static class DiscordRichPresenceAPI
 {
-    private static readonly Action<string, DateTime?, DateTime?>? SetPresenceMethod =
+    private static readonly Action<string, DateTime?, DateTime?, bool>? SetPresenceMethod =
         AccessTools.Method("Bannerlord.DiscordRichPresence:SetPresence") is { } method
-            ? AccessTools.MethodDelegate<Action<string, DateTime?, DateTime?>>(method)
+            ? AccessTools.MethodDelegate<Action<string, DateTime?, DateTime?, bool>>(method)
             : null;
-    private static readonly Action? SetPreviousPresenceMethod =
+    private static readonly Action<bool>? SetPreviousPresenceMethod =
         AccessTools.Method("Bannerlord.DiscordRichPresence:SetPreviousPresence") is { } method
-            ? AccessTools.MethodDelegate<Action>(method)
+            ? AccessTools.MethodDelegate<Action<bool>>(method)
             : null;
 
     public static void SetPresence(string details, DateTime? start, DateTime? end)
     {
         if (SetPresenceMethod != null)
         {
-            SetPresenceMethod(details, start, end);
+            SetPresenceMethod(details, start, end, true);
         }
     }
     public static void SetPreviousPresence()
     {
         if (SetPreviousPresenceMethod != null)
         {
-            SetPreviousPresence();
+            SetPreviousPresence(true);
         }
     }
 }

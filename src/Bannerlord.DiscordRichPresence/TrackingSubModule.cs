@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DiscordRPC;
 
-using DiscordRPC;
+using System;
 
-using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
@@ -10,8 +9,8 @@ namespace Bannerlord.DiscordRichPresence
 {
     internal sealed class TrackingSubModule : MBSubModuleBase
     {
-        private readonly Action<RichPresence> _setPresence;
-        private readonly Action _setPreviousPresence;
+        private readonly Action<RichPresence, bool> _setPresence;
+        private readonly Action<bool> _setPreviousPresence;
 
         public TrackingSubModule()
         {
@@ -23,16 +22,17 @@ namespace Bannerlord.DiscordRichPresence
         {
             base.OnSubModuleLoad();
 
-            _setPresence(PresenceStates.Loading());
+            _setPresence(PresenceStates.Loading(), true);
         }
 
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
 
-            _setPresence(PresenceStates.InMainMenu());
+            _setPresence(PresenceStates.InMainMenu(), true);
         }
 
+        /*
         private bool _inMenu;
         protected override void OnApplicationTick(float dt)
         {
@@ -43,7 +43,7 @@ namespace Bannerlord.DiscordRichPresence
                 if (!_inMenu)
                 {
                     _inMenu = true;
-                    _setPresence(PresenceStates.InMenu());
+                    _setPresence(PresenceStates.InMenu(), true);
                 }
             }
             else
@@ -51,30 +51,26 @@ namespace Bannerlord.DiscordRichPresence
                 if (_inMenu)
                 {
                     _inMenu = false;
-                    _setPreviousPresence();
+                    _setPreviousPresence(true);
                 }
             }
         }
+        */
 
         protected override void InitializeGameStarter(Game game, IGameStarter starterObject)
         {
             base.InitializeGameStarter(game, starterObject);
 
-            _setPresence(PresenceStates.Loading());
+            _setPresence(PresenceStates.Loading(), true);
         }
 
         public override void OnGameInitializationFinished(Game game)
         {
             base.OnGameInitializationFinished(game);
 
-            if (game.GameType is Campaign campaign)
-            {
-                _setPresence(PresenceStates.InCampaign(campaign.MainParty.LeaderHero));
-            }
-
             if (game.GameType.GetType().FullName == "TaleWorlds.MountAndBlade.CustomBattle.CustomGame")
             {
-                _setPresence(PresenceStates.InCustomBattle());
+                _setPresence(PresenceStates.InCustomBattle(), true);
             }
         }
     }
