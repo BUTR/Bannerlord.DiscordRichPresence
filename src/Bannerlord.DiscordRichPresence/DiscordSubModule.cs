@@ -1,7 +1,5 @@
 ﻿using Bannerlord.BUTR.Shared.Helpers;
 
-using System;
-
 using Bannerlord.ButterLib.Common.Extensions;
 using Bannerlord.DiscordRichPresence.CampaignBehaviors;
 using Bannerlord.DiscordRichPresence.MissionBehaviors;
@@ -14,6 +12,7 @@ using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json;
 
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;

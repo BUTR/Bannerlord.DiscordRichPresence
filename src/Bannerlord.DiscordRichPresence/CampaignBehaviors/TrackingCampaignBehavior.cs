@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DiscordRPC;
 
-using DiscordRPC;
+using System;
 
 using System.Linq;
 

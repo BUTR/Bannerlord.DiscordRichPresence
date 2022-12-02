@@ -1,9 +1,8 @@
-﻿using System;
-
-using Bannerlord.ButterLib.DynamicAPI;
+﻿using Bannerlord.ButterLib.DynamicAPI;
 
 using DiscordRPC;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 using TaleWorlds.CampaignSystem;
