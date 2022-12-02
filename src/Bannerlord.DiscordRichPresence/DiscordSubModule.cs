@@ -81,7 +81,7 @@ namespace Bannerlord.DiscordRichPresence
                 serviceProvider = this.GetServiceProvider()!;
             }
 
-            Client = new DiscordRpcClient("", autoEvents: false);
+            Client = new DiscordRpcClient("1045811849314172949", autoEvents: false);
             Client.Logger = new MicrosoftLogger(serviceProvider.GetRequiredService<ILogger<DiscordRpcClient>>()) { Level = DiscordRPC.Logging.LogLevel.Warning };
             Client.Initialize();
         }
