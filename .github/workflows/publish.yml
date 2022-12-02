@@ -30,6 +30,8 @@ jobs:
     - name: Build Bannerlord.DiscordRichPresence
       run: dotnet pack src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
       shell: pwsh
+      env:
+        BANNERLORD_DISCORD_MODLISTUPLOAD_URL: ${{secrets.BANNERLORD_DISCORD_MODLISTUPLOAD_URL}}
 
     - name: Install and Run ChangelogParser
       id: changelog
