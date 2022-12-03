@@ -218,7 +218,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             if (hero.CurrentSettlement is { IsHideout: false } heroSettlement)
                 return heroSettlement;
 
-            if (!hero.IsActive &&!hero.IsWanderer)
+            if (!hero.IsActive && !hero.IsWanderer)
                 return hero.HomeSettlement;
 
             var distanceCurrent = float.MaxValue;
