@@ -1,7 +1,6 @@
 ﻿using DiscordRPC;
 
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
@@ -17,10 +16,10 @@ namespace Bannerlord.DiscordRichPresence
         public static RichPresence Loading()
         {
             var detailsString = Strings.Loading.ToString();
+
             return new()
             {
-                //State = Strings.Sing leplayer.ToString(),
-                Details = "Singleplayer",
+                Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -28,16 +27,17 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence InMainMenu()
         {
             var detailsString = Strings.InMainMenu.ToString();
+
             return new()
             {
-                Details = "Singleplayer",
+                Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -45,16 +45,17 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence InCustomBattle()
         {
             var detailsString = Strings.InCustomBattle.ToString();
+
             return new()
             {
-                Details = "Singleplayer: Custom Battle",
+                Details = Strings.SingleplayerCustomBattle.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -62,16 +63,17 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence InMenu()
         {
             var detailsString = Strings.InMenu.ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -79,39 +81,38 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignTravelling(Hero hero, Settlement neareSettlement)
         {
-            var details = Strings.Travelling.CopyTextObject();
-            details.SetCharacterProperties("HERO", hero.CharacterObject);
-            details.SetTextVariable("SETTLEMENT", neareSettlement.Name);
-            var detailsString = details.ToString();
+            var detailsString = Strings.Travelling.CopyTextObject()
+                .SetCharacterProperties("HERO", hero.CharacterObject)
+                .SetTextVariable("SETTLEMENT", neareSettlement.Name).ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
-                    //SmallImageKey = AssetKeys.Bannerlord,
-                    //SmallImageText =
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignInSettlement(Settlement settlement)
         {
-            var detailsString = new TextObject("In {SETTLEMENT}")
+            var detailsString = Strings.CampaignInSettlement.CopyTextObject()
                 .SetTextVariable("SETTLEMENT", settlement.Name).ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -119,18 +120,19 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignInSettlementMission(Settlement settlement, Location location)
         {
-            var detailsString = new TextObject("In {LOCATION} at {SETTLEMENT}")
+            var detailsString = Strings.CampaignInSettlementMission.CopyTextObject()
                 .SetTextVariable("LOCATION", location.Name)
                 .SetTextVariable("SETTLEMENT", settlement.Name).ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -138,18 +140,28 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignAttacking(MapEvent mapEvent)
         {
-            var detailsString = new TextObject("Attacking {DEFENDERPARTY} as {ATTACKERPARTY}")
-                .SetTextVariable("ATTACKERPARTY", mapEvent.AttackerSide.LeaderParty.Name)
-                .SetTextVariable("DEFENDERPARTY", mapEvent.DefenderSide.LeaderParty.Name).ToString();
+            // TODO: Signal about it being a player simulation
+            var detailsString = (mapEvent.EventType switch
+                {
+                    MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
+                    MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
+                    MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignAttackingForcingVolunteers.CopyTextObject(),
+                    MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignAttackingForcingSupplies.CopyTextObject(),
+                    MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignAttackingSieging.CopyTextObject(),
+                    _ => new TextObject("ERROR")
+                })
+                .SetMapEventSideProperties("ATTACKER", mapEvent.AttackerSide)
+                .SetMapEventSideProperties("DEFENDER", mapEvent.DefenderSide).ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -157,18 +169,29 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignDefending(MapEvent mapEvent)
         {
-            var detailsString = new TextObject("Defending from {ATTACKERPARTY} as {DEFENDERPARTY}")
+            // TODO: Signal about it being a player simulation
+            var detailsString = (mapEvent.EventType switch
+                {
+                    MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignDefendingGeneral.CopyTextObject(),
+                    MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),
+                    MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignDefendingForcingVolunteers.CopyTextObject(),
+                    MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignDefendingForcingSupplies.CopyTextObject(),
+                    MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignDefendingSiege.CopyTextObject(),
+                    _ => new TextObject("ERROR")
+                })
                 .SetTextVariable("DEFENDERPARTY", mapEvent.DefenderSide.LeaderParty.Name)
-                .SetTextVariable("ATTACKERPARTY", mapEvent.AttackerSide.LeaderParty.Name).ToString();
+                .SetTextVariable("ATTACKERPARTY", mapEvent.AttackerSide.LeaderParty.Name)
+                .ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -176,20 +199,20 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignConversation(Hero mainHero, PartyBase conversationParty)
         {
-            var details = new TextObject("Talking with {PARTY} as {HERO.NAME}");
-            details.SetTextVariable("PARTY", conversationParty.Name);
-            details.SetCharacterProperties("HERO", mainHero.CharacterObject);
+            var details = Strings.CampaignConversation.CopyTextObject()
+                .SetTextVariable("PARTY", conversationParty.Name)
+                .SetCharacterProperties("HERO", mainHero.CharacterObject);
 
             var detailsString = details.ToString();
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -197,16 +220,17 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
 
         public static RichPresence CampaignCustom(TextObject details)
         {
             var detailsString = details.ToString();
+
             return new()
             {
-                Details = "Singleplayer: Bannerlord Campaign",
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
@@ -214,8 +238,7 @@ namespace Bannerlord.DiscordRichPresence
                     LargeImageKey = AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
-                Buttons = ModListUrl is not null ? new[] { new Button { Label = "Get Mod List", Url = ModListUrl } } : null,
-
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
         }
     }

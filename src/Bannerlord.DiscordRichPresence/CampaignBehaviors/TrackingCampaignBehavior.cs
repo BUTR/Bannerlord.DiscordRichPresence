@@ -5,12 +5,12 @@ using System;
 using System.Linq;
 
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.Conversation;
 using TaleWorlds.CampaignSystem.Encounters;
 using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
 
 namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 {
@@ -40,10 +40,17 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             CampaignEvents.PlayerEliminatedFromTournament.AddNonSerializedListener(this, OnPlayerEleminatedFromTournament);
 
             CampaignEvents.OnMissionStartedEvent.AddNonSerializedListener(this, OnMissionStarted);
+            CampaignEvents.MissionTickEvent.AddNonSerializedListener(this, OnMissionTick);
             CampaignEvents.OnMissionEndedEvent.AddNonSerializedListener(this, OnMissionEnded);
 
             CampaignEvents.SetupPreConversationEvent.AddNonSerializedListener(this, OnSetupPreConversation);
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
+
+            if (GetCampaignBehavior<CampaignEventsEx>() is { } campaignEventsEx)
+            {
+                campaignEventsEx.BattleSimulationStarted.AddNonSerializedListener(this, OnBattleSimulationStarted);
+                campaignEventsEx.BattleSimulationEnding.AddNonSerializedListener(this, OnBattleSimulationEnding);
+            }
         }
 
         private void OnSetupPreConversation()
@@ -99,6 +106,8 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
         private void OnMissionStarted(IMission baseMission)
         {
+            _missionTickCounter = 0f;
+
             if (MapEvent.PlayerMapEvent is { } mapEvent)
             {
                 switch (mapEvent.PlayerSide)
@@ -132,13 +141,56 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
                     }
                     case "training_field":
                     {
-
                         break;
                     }
                 }
             }
         }
+        private float _missionTickCounter = 0;
+        private void OnMissionTick(float dt)
+        {
+            _missionTickCounter += dt;
+            if (_missionTickCounter > 3f)
+            {
+                _missionTickCounter = 0f;
+                if (MapEvent.PlayerMapEvent is { } mapEvent)
+                {
+                    switch (mapEvent.PlayerSide)
+                    {
+                        case BattleSideEnum.Attacker:
+                            _setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+                            break;
+                        case BattleSideEnum.Defender:
+                            _setPresence(PresenceStates.CampaignDefending(mapEvent), true);
+                            break;
+                    }
+                }
+            }
+        }
         private void OnMissionEnded(IMission baseMission)
+        {
+            _missionTickCounter = 0f;
+            CheckCurrentState();
+        }
+
+        private void OnBattleSimulationStarted(BattleSimulation battleSimulation)
+        {
+            if (battleSimulation.MapEvent is { } mapEvent)
+            {
+                switch (mapEvent.PlayerSide)
+                {
+                    case BattleSideEnum.Attacker:
+                        _setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+                        break;
+                    case BattleSideEnum.Defender:
+                        _setPresence(PresenceStates.CampaignDefending(mapEvent), true);
+                        break;
+                }
+            }
+            //_setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+
+        }
+        private void OnBattleSimulationEnding(BattleSimulation battleSimulation)
         {
             CheckCurrentState();
         }

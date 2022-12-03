@@ -174,6 +174,7 @@ namespace Bannerlord.DiscordRichPresence
 
             if (starterObject is CampaignGameStarter campaignGameStarter)
             {
+                campaignGameStarter.AddBehavior(new CampaignEventsEx());
                 campaignGameStarter.AddBehavior(new TrackingCampaignBehavior(SetPresence, SetPreviousPresence));
             }
         }

@@ -4,13 +4,37 @@ namespace Bannerlord.DiscordRichPresence
 {
     internal static class Strings
     {
-        public static readonly TextObject Singleplayer = new("{=j4b5h20h6k]Playing Singleplayer");
-        public static readonly TextObject Loading = new("{=h3t6g2ts7h}Loading...");
-        public static readonly TextObject InMainMenu = new("{=f4f2g6h5f3}In Main Menu");
-        public static readonly TextObject InCustomBattle = new("{=i5g3i7j5n6}In a Custom Battle");
-        public static readonly TextObject InCampaign = new("{=p7k4m2g9d2}In a Campaign as {HERO.NAME}");
-        public static readonly TextObject InMenu = new("{=f4f2g6h5f3}In a Menu");
-        public static readonly TextObject Travelling = new("{=p7k4m2g9d2}Travelling as {HERO.NAME} near {SETTLEMENT}");
+        public static readonly TextObject GetModList = new("{=meYs0E4y}Get Mod List");
 
+
+        public static readonly TextObject Singleplayer = new("{=JbpAgMpG}Singleplayer");
+        public static readonly TextObject SingleplayerCustomBattle = new("{=a7NGHGQ6}Singleplayer: Custom Battle");
+        public static readonly TextObject SingleplayerBannerlordCampaign = new("{=e7hmqot8}Singleplayer: Bannerlord Campaign");
+
+
+        public static readonly TextObject Loading = new("{=5Fd4qhYA}Loading...");
+        public static readonly TextObject InMainMenu = new("{=aZboLkmT}In Main Menu");
+        public static readonly TextObject InCustomBattle = new("{=UrcQjlQ9}In a Custom Battle");
+        public static readonly TextObject InMenu = new("{=AW9YgXO3}In a Menu");
+        public static readonly TextObject Travelling = new("{=EN0dNwKz}Travelling as {HERO.NAME} near {SETTLEMENT}");
+
+
+        public static readonly TextObject CampaignInSettlement = new("{=BcvAuXsH}In {SETTLEMENT}");
+
+        public static readonly TextObject CampaignInSettlementMission = new("{=YjyPeo1g}In {LOCATION} at {SETTLEMENT}");
+
+        public static readonly TextObject CampaignAttackingGeneral = new("{=vbS40wdE}Attacking {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
+        public static readonly TextObject CampaignAttackingRaid = new("{=lfAU30F0}Raiding {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
+        public static readonly TextObject CampaignAttackingForcingVolunteers = new("{=houvlYqH}Forcing volunteers {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
+        public static readonly TextObject CampaignAttackingForcingSupplies = new("{=Bmb5QRHX}Forcing supplies {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
+        public static readonly TextObject CampaignAttackingSieging = new("{=uAVJBLHS}Sieging {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
+
+        public static readonly TextObject CampaignDefendingGeneral = new("{=f7hYjU4D}Defending against {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
+        public static readonly TextObject CampaignDefendingRaid = new("{=5TwT4kNC}Defending against a raid by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
+        public static readonly TextObject CampaignDefendingForcingVolunteers = new("{=GHfQXd9t}Defending against forcing volunteers by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
+        public static readonly TextObject CampaignDefendingForcingSupplies = new("{=fJdWDciU}Defending against forcing supplies by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
+        public static readonly TextObject CampaignDefendingSiege = new("{=FMVm4Ipd}Defending against a siege by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
+
+        public static readonly TextObject CampaignConversation = new("{=v2cwuO3J}Talking with {PARTY} as {HERO.NAME}");
     }
 }
