@@ -144,7 +144,7 @@ namespace Bannerlord.DiscordRichPresence
             };
         }
 
-        public static RichPresence CampaignAttacking(MapEvent mapEvent)
+        public static RichPresence CampaignAttacking(MapEvent mapEvent, bool isSimulation)
         {
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
@@ -156,6 +156,7 @@ namespace Bannerlord.DiscordRichPresence
                     MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignAttackingSieging.CopyTextObject(),
                     _ => new TextObject("ERROR")
                 })
+                .SetConditional(() => isSimulation, "ISSIMULATION", Strings.CampaignIsSimulation)
                 .SetMapEventSideProperties("ATTACKER", mapEvent.AttackerSide)
                 .SetMapEventSideProperties("DEFENDER", mapEvent.DefenderSide).ToString();
 
@@ -173,7 +174,7 @@ namespace Bannerlord.DiscordRichPresence
             };
         }
 
-        public static RichPresence CampaignDefending(MapEvent mapEvent)
+        public static RichPresence CampaignDefending(MapEvent mapEvent, bool isSimulation)
         {
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
@@ -185,8 +186,9 @@ namespace Bannerlord.DiscordRichPresence
                     MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignDefendingSiege.CopyTextObject(),
                     _ => new TextObject("ERROR")
                 })
-                .SetTextVariable("DEFENDERPARTY", mapEvent.DefenderSide.LeaderParty.Name)
-                .SetTextVariable("ATTACKERPARTY", mapEvent.AttackerSide.LeaderParty.Name)
+                .SetConditional(() => isSimulation, "ISSIMULATION", Strings.CampaignIsSimulation)
+                .SetMapEventSideProperties("DEFENDER", mapEvent.DefenderSide)
+                .SetMapEventSideProperties("ATTACKER", mapEvent.AttackerSide)
                 .ToString();
 
             return new()

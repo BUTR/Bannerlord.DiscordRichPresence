@@ -104,8 +104,11 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             CheckCurrentState();
         }
 
+        private bool? _isBattleSimulated;
+        private float _missionTickCounter = 0;
         private void OnMissionStarted(IMission baseMission)
         {
+            _isBattleSimulated = true;
             _missionTickCounter = 0f;
 
             if (MapEvent.PlayerMapEvent is { } mapEvent)
@@ -113,10 +116,10 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
                 switch (mapEvent.PlayerSide)
                 {
                     case BattleSideEnum.Attacker:
-                        _setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+                        _setPresence(PresenceStates.CampaignAttacking(mapEvent, false), true);
                         break;
                     case BattleSideEnum.Defender:
-                        _setPresence(PresenceStates.CampaignDefending(mapEvent), true);
+                        _setPresence(PresenceStates.CampaignDefending(mapEvent, false), true);
                         break;
                 }
             }
@@ -146,7 +149,6 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
                 }
             }
         }
-        private float _missionTickCounter = 0;
         private void OnMissionTick(float dt)
         {
             _missionTickCounter += dt;
@@ -158,10 +160,10 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
                     switch (mapEvent.PlayerSide)
                     {
                         case BattleSideEnum.Attacker:
-                            _setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+                            _setPresence(PresenceStates.CampaignAttacking(mapEvent, _isBattleSimulated!.Value), true);
                             break;
                         case BattleSideEnum.Defender:
-                            _setPresence(PresenceStates.CampaignDefending(mapEvent), true);
+                            _setPresence(PresenceStates.CampaignDefending(mapEvent, _isBattleSimulated!.Value), true);
                             break;
                     }
                 }
@@ -169,21 +171,23 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
         }
         private void OnMissionEnded(IMission baseMission)
         {
+            _isBattleSimulated = null;
             _missionTickCounter = 0f;
             CheckCurrentState();
         }
 
         private void OnBattleSimulationStarted(BattleSimulation battleSimulation)
         {
+            _isBattleSimulated = true;
             if (battleSimulation.MapEvent is { } mapEvent)
             {
                 switch (mapEvent.PlayerSide)
                 {
                     case BattleSideEnum.Attacker:
-                        _setPresence(PresenceStates.CampaignAttacking(mapEvent), true);
+                        _setPresence(PresenceStates.CampaignAttacking(mapEvent, _isBattleSimulated.Value), true);
                         break;
                     case BattleSideEnum.Defender:
-                        _setPresence(PresenceStates.CampaignDefending(mapEvent), true);
+                        _setPresence(PresenceStates.CampaignDefending(mapEvent, _isBattleSimulated.Value), true);
                         break;
                 }
             }
@@ -192,6 +196,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
         }
         private void OnBattleSimulationEnding(BattleSimulation battleSimulation)
         {
+            _isBattleSimulated = null;
             CheckCurrentState();
         }
 

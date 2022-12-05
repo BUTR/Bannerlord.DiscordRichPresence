@@ -1,5 +1,7 @@
 ﻿using Helpers;
 
+using System;
+
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.Localization;
@@ -11,6 +13,13 @@ namespace Bannerlord.DiscordRichPresence
         public static TextObject SetCharacterProperties(this TextObject to, string tag, CharacterObject character, bool includeDetails = false)
         {
             StringHelpers.SetCharacterProperties(tag, character, to, includeDetails);
+            return to;
+        }
+
+        public static TextObject SetConditional(this TextObject to, Func<bool> predicate, string tag, TextObject toadd)
+        {
+            if (predicate())
+                to.SetTextVariable(tag, toadd);
             return to;
         }
 
