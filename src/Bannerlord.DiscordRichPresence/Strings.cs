@@ -23,7 +23,7 @@ namespace Bannerlord.DiscordRichPresence
 
         public static readonly TextObject CampaignInSettlementMission = new("{=YjyPeo1g}In {LOCATION} at {SETTLEMENT}");
 
-        public static readonly TextObject CampaignIsSimulation = new("{=PCG2v8aCAm}(Simulation) ");
+        public static readonly TextObject CampaignIsSimulation = new("{=O4x837Ak}(Simulation) ");
         public static readonly TextObject CampaignAttackingGeneral = new("{=vbS40wdE}{ISSIMULATION}Attacking {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
         public static readonly TextObject CampaignAttackingRaid = new("{=lfAU30F0}{ISSIMULATION}Raiding {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");
         public static readonly TextObject CampaignAttackingForcingVolunteers = new("{=houvlYqH}{ISSIMULATION}Forcing volunteers {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})");

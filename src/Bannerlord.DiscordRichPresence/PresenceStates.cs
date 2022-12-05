@@ -21,7 +21,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -39,7 +39,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -57,7 +57,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerCustomBattle.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -75,7 +75,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -95,7 +95,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -114,7 +114,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -134,7 +134,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -164,7 +164,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -195,7 +195,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -216,7 +216,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -234,7 +234,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Timestamps.Now,
+                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
