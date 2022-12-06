@@ -148,14 +148,14 @@ namespace Bannerlord.DiscordRichPresence
         {
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
-                {
-                    MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
-                    MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
-                    MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignAttackingForcingVolunteers.CopyTextObject(),
-                    MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignAttackingForcingSupplies.CopyTextObject(),
-                    MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignAttackingSieging.CopyTextObject(),
-                    _ => new TextObject("ERROR")
-                })
+            {
+                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
+                MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
+                MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignAttackingForcingVolunteers.CopyTextObject(),
+                MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignAttackingForcingSupplies.CopyTextObject(),
+                MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignAttackingSieging.CopyTextObject(),
+                _ => new TextObject("ERROR")
+            })
                 .SetConditional(() => isSimulation, "ISSIMULATION", Strings.CampaignIsSimulation)
                 .SetMapEventSideProperties("ATTACKER", mapEvent.AttackerSide)
                 .SetMapEventSideProperties("DEFENDER", mapEvent.DefenderSide).ToString();
@@ -178,14 +178,14 @@ namespace Bannerlord.DiscordRichPresence
         {
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
-                {
-                    MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignDefendingGeneral.CopyTextObject(),
-                    MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),
-                    MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignDefendingForcingVolunteers.CopyTextObject(),
-                    MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignDefendingForcingSupplies.CopyTextObject(),
-                    MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignDefendingSiege.CopyTextObject(),
-                    _ => new TextObject("ERROR")
-                })
+            {
+                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignDefendingGeneral.CopyTextObject(),
+                MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),
+                MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignDefendingForcingVolunteers.CopyTextObject(),
+                MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignDefendingForcingSupplies.CopyTextObject(),
+                MapEvent.BattleTypes.Siege or MapEvent.BattleTypes.SiegeOutside or MapEvent.BattleTypes.SallyOut => Strings.CampaignDefendingSiege.CopyTextObject(),
+                _ => new TextObject("ERROR")
+            })
                 .SetConditional(() => isSimulation, "ISSIMULATION", Strings.CampaignIsSimulation)
                 .SetMapEventSideProperties("DEFENDER", mapEvent.DefenderSide)
                 .SetMapEventSideProperties("ATTACKER", mapEvent.AttackerSide)
