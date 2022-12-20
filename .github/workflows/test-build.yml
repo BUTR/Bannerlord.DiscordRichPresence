@@ -19,7 +19,7 @@ jobs:
 
   build:
     name: Test Build Supported Verions
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
@@ -27,8 +27,10 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.0.x
 
     - name: Build DiscordRichPresence for test
-      run: dotnet pack src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
+      run: >-
+          dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
+          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
       shell: pwsh
