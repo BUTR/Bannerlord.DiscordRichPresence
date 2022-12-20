@@ -29,6 +29,11 @@ jobs:
       with:
         dotnet-version: 7.0.x
 
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.3
+      with:
+        msbuild-architecture: x64
+
     - name: Build DiscordRichPresence for test
       run: >-
           dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
