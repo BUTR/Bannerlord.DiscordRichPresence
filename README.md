@@ -61,11 +61,11 @@ internal static class DiscordRichPresenceAPI
 internal static class DiscordRichPresenceAPI
 {
     private static readonly Action<string, DateTime?, DateTime?, bool>? SetPresenceMethod =
-        AccessTools.Method("Bannerlord.DiscordRichPresence:SetPresence") is { } method
+        AccessTools.Method("Bannerlord.DiscordRichPresence.DynamicAPI:SetPresence") is { } method
             ? AccessTools.MethodDelegate<Action<string, DateTime?, DateTime?, bool>>(method)
             : null;
     private static readonly Action<bool>? SetPreviousPresenceMethod =
-        AccessTools.Method("Bannerlord.DiscordRichPresence:SetPreviousPresence") is { } method
+        AccessTools.Method("Bannerlord.DiscordRichPresence.DynamicAPI:SetPreviousPresence") is { } method
             ? AccessTools.MethodDelegate<Action<bool>>(method)
             : null;
 
