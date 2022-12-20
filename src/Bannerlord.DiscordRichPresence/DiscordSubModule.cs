@@ -1,8 +1,6 @@
 ﻿using Bannerlord.BUTR.Shared.Helpers;
 
 using Bannerlord.ButterLib.Common.Extensions;
-using Bannerlord.DiscordRichPresence.CampaignBehaviors;
-using Bannerlord.DiscordRichPresence.MissionBehaviors;
 using Bannerlord.DiscordRichPresence.Utils;
 
 using DiscordRPC;
@@ -21,8 +19,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace Bannerlord.DiscordRichPresence
@@ -117,7 +113,7 @@ namespace Bannerlord.DiscordRichPresence
                 : null;
         }
 
-        private async Task<string?> UploadModListAsync()
+        private static async Task<string?> UploadModListAsync()
         {
             try
             {
@@ -166,25 +162,6 @@ namespace Bannerlord.DiscordRichPresence
             {
                 return null;
             }
-        }
-
-        protected override void InitializeGameStarter(Game game, IGameStarter starterObject)
-        {
-            base.InitializeGameStarter(game, starterObject);
-
-            if (starterObject is CampaignGameStarter campaignGameStarter)
-            {
-                campaignGameStarter.AddBehavior(new CampaignEventsEx());
-                campaignGameStarter.AddBehavior(new TrackingCampaignBehavior(SetPresence, SetPreviousPresence));
-            }
-        }
-
-        /// <inheritdoc />
-        public override void OnMissionBehaviorInitialize(Mission mission)
-        {
-            base.OnMissionBehaviorInitialize(mission);
-
-            mission.AddMissionBehavior(new TrackingMissionBehavior(SetPresence, SetPreviousPresence));
         }
 
         protected override void OnApplicationTick(float dt)

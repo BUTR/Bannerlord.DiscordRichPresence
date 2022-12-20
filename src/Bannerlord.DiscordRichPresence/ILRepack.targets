@@ -3,6 +3,7 @@
   <Target Name="ILRepacker" AfterTargets="Build" BeforeTargets="CopyBinaries">
     <ItemGroup>
       <InputAssemblies Include="$(OutputPath)\$(AssemblyName).dll" />
+      <InputAssemblies Include="$(OutputPath)\Newtonsoft.Json.dll" />
       <InputAssemblies Include="$(OutputPath)\DiscordRPC.dll" />
       <InputAssemblies Include="$(OutputPath)\MCMv5.dll" />
     </ItemGroup>

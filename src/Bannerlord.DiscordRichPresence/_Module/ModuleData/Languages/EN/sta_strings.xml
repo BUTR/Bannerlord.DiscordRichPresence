@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="English" />
+  </tags>
+  <strings>
+    <string id="{=1fQo3dBh}" text="Discord Rich Presence {VERSION}" />
+    <string id="{=meYs0E4y}" text="Get Mod List" />
+    <string id="{=JbpAgMpG}" text="Singleplayer" />
+    <string id="{=a7NGHGQ6}" text="Singleplayer: Custom Battle" />
+    <string id="{=e7hmqot8}" text="Singleplayer: Bannerlord Campaign" />
+    <string id="{=5Fd4qhYA}" text="Loading..." />
+    <string id="{=aZboLkmT}" text="In Main Menu" />
+    <string id="{=UrcQjlQ9}" text="In a Custom Battle" />
+    <string id="{=AW9YgXO3}" text="In a Menu" />
+    <string id="{=EN0dNwKz}" text="Traveling as {HERO.NAME} near {SETTLEMENT}" />
+    <string id="{=BcvAuXsH}" text="In {SETTLEMENT}" />
+    <string id="{=YjyPeo1g}" text="In {LOCATION} at {SETTLEMENT}" />
+    <string id="{=O4x837Ak}" text="(Simulation) " />
+    <string id="{=vbS40wdE}" text="{ISSIMULATION}Attacking {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})" />
+    <string id="{=lfAU30F0}" text="{ISSIMULATION}Raiding {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})" />
+    <string id="{=houvlYqH}" text="{ISSIMULATION}Forcing volunteers {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})" />
+    <string id="{=Bmb5QRHX}" text="{ISSIMULATION}Forcing supplies {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})" />
+    <string id="{=uAVJBLHS}" text="{ISSIMULATION}Sieging {DEFENDER.NAME} ({DEFENDER.COUNT}) as {ATTACKER.NAME} ({ATTACKER.COUNT})" />
+    <string id="{=f7hYjU4D}" text="{ISSIMULATION}Defending against {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})" />
+    <string id="{=5TwT4kNC}" text="{ISSIMULATION}Defending against a raid by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})" />
+    <string id="{=GHfQXd9t}" text="{ISSIMULATION}Defending against forcing volunteers by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})" />
+    <string id="{=fJdWDciU}" text="{ISSIMULATION}Defending against forcing supplies by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})" />
+    <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Defending against a siege by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})" />
+    <string id="{=v2cwuO3J}" text="Talking with {PARTY} as {HERO.NAME}" />
+    <string id="{=Id6YRNIF}" text="Show Elapsed Time" />
+    <string id="{=2HU8nftA}" text="Share Mod List" />
+  </strings>
+</base>

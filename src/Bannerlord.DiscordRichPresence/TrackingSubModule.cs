@@ -1,7 +1,11 @@
-﻿using DiscordRPC;
+﻿using Bannerlord.DiscordRichPresence.CampaignBehaviors;
+using Bannerlord.DiscordRichPresence.MissionBehaviors;
+
+using DiscordRPC;
 
 using System;
 
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
@@ -62,6 +66,11 @@ namespace Bannerlord.DiscordRichPresence
             base.InitializeGameStarter(game, starterObject);
 
             _setPresence(PresenceStates.Loading(), true);
+            if (starterObject is CampaignGameStarter campaignGameStarter)
+            {
+                campaignGameStarter.AddBehavior(new CampaignEventsEx());
+                campaignGameStarter.AddBehavior(new TrackingCampaignBehavior(DiscordSubModule.Instance.SetPresence, DiscordSubModule.Instance.SetPreviousPresence));
+            }
         }
 
         public override void OnGameInitializationFinished(Game game)
@@ -72,6 +81,13 @@ namespace Bannerlord.DiscordRichPresence
             {
                 _setPresence(PresenceStates.InCustomBattle(), true);
             }
+        }
+
+        public override void OnMissionBehaviorInitialize(Mission mission)
+        {
+            base.OnMissionBehaviorInitialize(mission);
+
+            mission.AddMissionBehavior(new TrackingMissionBehavior(DiscordSubModule.Instance.SetPresence, DiscordSubModule.Instance.SetPreviousPresence));
         }
     }
 }

@@ -87,7 +87,7 @@ namespace Bannerlord.DiscordRichPresence
 
         public static RichPresence CampaignTravelling(Hero hero, Settlement neareSettlement)
         {
-            var detailsString = Strings.Travelling.CopyTextObject()
+            var detailsString = Strings.Traveling.CopyTextObject()
                 .SetCharacterProperties("HERO", hero.CharacterObject)
                 .SetTextVariable("SETTLEMENT", neareSettlement.Name).ToString();
 

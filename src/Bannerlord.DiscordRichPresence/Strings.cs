@@ -16,7 +16,7 @@ namespace Bannerlord.DiscordRichPresence
         public static readonly TextObject InMainMenu = new("{=aZboLkmT}In Main Menu");
         public static readonly TextObject InCustomBattle = new("{=UrcQjlQ9}In a Custom Battle");
         public static readonly TextObject InMenu = new("{=AW9YgXO3}In a Menu");
-        public static readonly TextObject Travelling = new("{=EN0dNwKz}Travelling as {HERO.NAME} near {SETTLEMENT}");
+        public static readonly TextObject Traveling = new("{=EN0dNwKz}Traveling as {HERO.NAME} near {SETTLEMENT}");
 
 
         public static readonly TextObject CampaignInSettlement = new("{=BcvAuXsH}In {SETTLEMENT}");
