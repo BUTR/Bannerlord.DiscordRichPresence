@@ -57,7 +57,7 @@
   </Target>
 
   <!-- Enhance build if $(ExtendedBuild) is set, optional -->
-  <Target Name="ExtendedBuild" AfterTargets="Build" Condition="'$(ExtendedBuild)' == 'true'">
+  <Target Name="ExtendedBuild" AfterTargets="Build" Condition="'$(ExtendedBuildMSBuild)' == 'true'">
     <PropertyGroup>
       <ScriptExecutable>pwsh -noprofile -noninteractive -Command</ScriptExecutable>
       <ScriptLocation>$(MSBuildThisFileDirectory)\build-fully-msbuild.ps1</ScriptLocation>
