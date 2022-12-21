@@ -36,7 +36,7 @@ jobs:
       run: >-
           mkdir bannerlord;
           dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
-          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
+          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /t:Pack /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
       shell: pwsh
       env:
         BANNERLORD_DISCORD_MODLISTUPLOAD_URL: ${{secrets.BANNERLORD_DISCORD_MODLISTUPLOAD_URL}}
