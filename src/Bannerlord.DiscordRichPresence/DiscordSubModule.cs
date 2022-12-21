@@ -2,6 +2,7 @@
 
 using Bannerlord.ButterLib.Common.Extensions;
 using Bannerlord.DiscordRichPresence.Utils;
+using Bannerlord.ModuleManager;
 
 using DiscordRPC;
 
@@ -25,6 +26,21 @@ namespace Bannerlord.DiscordRichPresence
 {
     internal sealed class DiscordSubModule : MBSubModuleBase
     {
+        private static readonly int DefaultChangeSet = typeof(TaleWorlds.Library.ApplicationVersion).GetField("DefaultChangeSet")?.GetValue(null) as int? ?? 0;
+
+        private static string ToString(ApplicationVersion version)
+        {
+            var str = version.ToString();
+            if (version.ChangeSet == DefaultChangeSet)
+            {
+                var idx = str.LastIndexOf('.');
+                return str.Substring(0, idx);
+            }
+            return str;
+        }
+
+        internal static DiscordSubModule Instance { get; private set; } = default!;
+
         private string? _modListUrl;
         public string? ModListUrl
         {
@@ -43,8 +59,6 @@ namespace Bannerlord.DiscordRichPresence
                 }
             }
         }
-
-        internal static DiscordSubModule Instance { get; private set; } = default!;
 
         private bool ServiceRegistrationWasCalled { get; set; }
         private bool DelayedServiceCreation { get; set; }
@@ -128,7 +142,7 @@ namespace Bannerlord.DiscordRichPresence
                     Modules = ModuleInfoHelper.GetLoadedModules().Select(x => new
                     {
                         Id = x.Id,
-                        Version = x.Version.ToString(),
+                        Version = ToString(x.Version),
                         Name = x.Name,
                         Url = x.Url
                     }).ToArray()

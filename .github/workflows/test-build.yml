@@ -2,10 +2,24 @@
 name: Test Build Supported Verions
 
 on:
+  repository_dispatch:
+    types: [game_version_update, game_version_update_patch]
   push:
     branches:
-      - '*'
-      #- '!master'
+      - master
+    paths:
+      - '.github/workflows/test-build.yml'
+      - 'src/**'
+      - 'tests/**'
+  pull_request:
+    branches:
+      - master
+    # will be triggered when undrafting or requesting review
+    types: [review_requested, ready_for_review]
+    paths:
+      - '.github/workflows/test-build.yml'
+      - 'src/**'
+      - 'tests/**'
 
 env:
   # Disable the .NET logo in the console output.
