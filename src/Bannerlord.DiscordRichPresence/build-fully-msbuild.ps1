@@ -1,4 +1,4 @@
-param (
+﻿param (
     [Parameter()]
     [System.String]
     $BasePath,
