@@ -29,7 +29,7 @@
   <img src="https://staticdelivery.nexusmods.com/mods/3174/images/4836/4836-1670247182-153716606.png" width="300">
 </p>
 
-Adds Discord Rich Presence support for the game! Inspired by one of the first mods on NexusMods, [Discord RP for Bannerlord](https://www.nexusmods.com/mountandblade2bannerlord/mods/24)! 
+Adds Discord Rich Presence support for the game! Inspired by one of the first mods on NexusMods, [Discord RP for Bannerlord](https://github.com/TheDoctorOne/Discord-Rich-Presence-for-Bannerlord)! 
 
 Full translation support as expected from BUTR mods!
 Settings are available via MCM!
