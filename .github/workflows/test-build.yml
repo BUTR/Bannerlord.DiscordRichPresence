@@ -51,5 +51,5 @@ jobs:
     - name: Build DiscordRichPresence for test
       run: >-
           dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
-        msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /t:ExtendedMSBuild /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
+          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /t:ExtendedMSBuild /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
       shell: pwsh
