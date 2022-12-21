@@ -56,8 +56,7 @@
     <Warning Condition="$(ModListUploadUrl) == ''" Text="Environment variable 'BANNERLORD_DISCORD_MODLISTUPLOAD_URL' is not set!" />
   </Target>
 
-  <!-- Enhance build if $(ExtendedBuild) is set, optional -->
-  <Target Name="ExtendedBuild" AfterTargets="Build" Condition="'$(ExtendedBuildMSBuild)' == 'true'">
+  <Target Name="ExtendedMSBuild" >
     <PropertyGroup>
       <ScriptExecutable>pwsh -noprofile -noninteractive -Command</ScriptExecutable>
       <ScriptLocation>$(MSBuildThisFileDirectory)\build-fully-msbuild.ps1</ScriptLocation>
