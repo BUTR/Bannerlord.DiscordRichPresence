@@ -35,7 +35,7 @@ jobs:
     - name: Build Bannerlord.DiscordRichPresence
       run: >-
           mkdir bannerlord;
-          dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj --configuration Release -p:GameFolder="$PWD/bannerlord";
+          dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
           msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
       shell: pwsh
       env:
