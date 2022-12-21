@@ -29,6 +29,28 @@
   <img src="https://staticdelivery.nexusmods.com/mods/3174/images/4836/4836-1670247182-153716606.png" width="300">
 </p>
 
+Adds Discord Rich Presence support for the game! Inspired by one of the first mods on NexusMods, [Discord RP for Bannerlord](https://www.nexusmods.com/mountandblade2bannerlord/mods/24)! 
+
+Full translation support as expected from BUTR mods!
+Settings are available via MCM!
+
+You can also enable mod sharing in Options that will add a fancy button on the bottom of your profile, opening it will give you an URL in format `https://modlist.butr.link/d29ee27c-5f08-4a53-b4ae-231a76d5e404` that will contain your game version and the list of enabled mods! The url will be available for 8 hour since the start of your game!
+Some commentary about this feature. At the start of the game when the option is enabled or when saving with the enabled option, the module will send to `https://modlist.butr.link` the game version and the mod list and obtain a link that lives 8 hours that will show you the info. This is done this way because Discord has a limit on the URL length and we can't put the info inside the URL via the query params, so we have a quick lived backend server that stores this info.
+Because the Module is open-sourced, even if our server dies after some years, we have the [backend available](https://github.com/BUTR/BUTR.ModListServer)﻿ for anyone to host and setup the module again with the feature!
+
+The game supports basic states:
+
+* Main Menu
+* Loading
+* Custom Battles
+* Campaign:
+  * Traveling near a settlement
+  * Conversation with someone
+  * At Settlement
+  * In Settlement (Mission)
+  * In Battle (simulation and not) with troop count. Attacking/Defending. Raid, Siege, Forcing* are all supported
+
+## For Modders
 Other mods can use this module to set their own presence:  
 Note that you can use this code even if `Bannerlord.DiscordRichPresence` is not enabled by user, the actions will be skipped.
 ### ButterLib's DynamicAPI
