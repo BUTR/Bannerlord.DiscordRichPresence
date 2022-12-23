@@ -20,7 +20,7 @@
   <PropertyGroup>
     <HarmonyVersion>2.2.2</HarmonyVersion>
     <ButterLibVersion>2.6.1</ButterLibVersion>
-    <MCMVersion>5.4.5</MCMVersion>
+    <MCMVersion>5.5.2</MCMVersion>
     <BUTRModuleLoaderVersion>1.0.1.44</BUTRModuleLoaderVersion>
     <HarmonyExtensionsVersion>3.2.0.72</HarmonyExtensionsVersion>
     <BUTRSharedVersion>3.0.0.125</BUTRSharedVersion>
