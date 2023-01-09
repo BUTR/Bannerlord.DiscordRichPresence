@@ -9,6 +9,9 @@
   <a href="https://codeclimate.com/github/BUTR/Bannerlord.DiscordRichPresence/maintainability">
     <img alt="Code Climate maintainability" src="https://img.shields.io/codeclimate/maintainability-percentage/BUTR/Bannerlord.DiscordRichPresence">
   </a>
+  <a title="Crowdin" target="_blank" href="https://crowdin.com/project/discord-rich-presence">
+    <img src="https://badges.crowdin.net/discord-rich-presence/localized.svg">
+  </a>
   </br>
   <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/4836" alt="NexusMods DiscordRichPresence">
     <img src="https://img.shields.io/badge/NexusMods-DiscordRichPresence-yellow.svg" />
