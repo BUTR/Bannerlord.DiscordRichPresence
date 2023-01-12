@@ -1,34 +1,34 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
   <tags>
-    <tag language="Русский" />
+    <tag language="Русский"/>
   </tags>
   <strings>
-    <string id="{=1fQo3dBh}" text="Discord Rich Presence {VERSION}" />
-    <string id="{=meYs0E4y}" text="Посмотреть список модов" />
-    <string id="{=JbpAgMpG}" text="Одиночная игра" />
-    <string id="{=a7NGHGQ6}" text="Одиночная игра: Пользовательская битва" />
-    <string id="{=e7hmqot8}" text="Одиночная игра: Компания Bannerlord" />
-    <string id="{=5Fd4qhYA}" text="Загружается..." />
-    <string id="{=aZboLkmT}" text="В главном меню" />
-    <string id="{=UrcQjlQ9}" text="В пользовательская битве" />
-    <string id="{=AW9YgXO3}" text="В меню" />
-    <string id="{=EN0dNwKz}" text="Путешествует как {HERO.NAME} у {SETTLEMENT}" />
-    <string id="{=BcvAuXsH}" text="В {SETTLEMENT}" />
-    <string id="{=YjyPeo1g}" text="В {LOCATION} у {SETTLEMENT}" />
-    <string id="{=O4x837Ak}" text="(Симуляция) " />
-    <string id="{=vbS40wdE}" text="{ISSIMULATION}Нападает на {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})" />
-    <string id="{=lfAU30F0}" text="{ISSIMULATION}Набег на {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})" />
-    <string id="{=houvlYqH}" text="{ISSIMULATION}Берет силой рекрутов {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})" />
-    <string id="{=Bmb5QRHX}" text="{ISSIMULATION}Берет силой припасы {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})" />
-    <string id="{=uAVJBLHS}" text="{ISSIMULATION}Осаждает {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})" />
-    <string id="{=f7hYjU4D}" text="{ISSIMULATION}Обороняется против {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})" />
-    <string id="{=5TwT4kNC}" text="{ISSIMULATION}Обороняется против набега {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})" />
-    <string id="{=GHfQXd9t}" text="{ISSIMULATION}Обороняется против захвата силой рекрутов {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})" />
-    <string id="{=fJdWDciU}" text="{ISSIMULATION}Обороняется против захвата силой припасов {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})" />
-    <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Обороняется против осады {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})" />
-    <string id="{=v2cwuO3J}" text="В разговоре с {PARTY} как {HERO.NAME}" />
-    <string id="{=Id6YRNIF}" text="Показывает прошедшее время" />
-    <string id="{=2HU8nftA}" text="Делиться списком модов" />
+    <string id="{=1fQo3dBh}" text="Discord Rich Presence {VERSION}"/>
+    <string id="{=meYs0E4y}" text="Посмотреть список модов"/>
+    <string id="{=JbpAgMpG}" text="Одиночная игра"/>
+    <string id="{=a7NGHGQ6}" text="Одиночная игра: Пользовательская битва"/>
+    <string id="{=e7hmqot8}" text="Одиночная игра: Компания Bannerlord"/>
+    <string id="{=5Fd4qhYA}" text="Загружается..."/>
+    <string id="{=aZboLkmT}" text="В главном меню"/>
+    <string id="{=UrcQjlQ9}" text="В пользовательская битве"/>
+    <string id="{=AW9YgXO3}" text="В меню"/>
+    <string id="{=EN0dNwKz}" text="Путешествует как {HERO.NAME} у {SETTLEMENT}"/>
+    <string id="{=BcvAuXsH}" text="В {SETTLEMENT}"/>
+    <string id="{=YjyPeo1g}" text="В {LOCATION} у {SETTLEMENT}"/>
+    <string id="{=O4x837Ak}" text="(Симуляция) "/>
+    <string id="{=vbS40wdE}" text="{ISSIMULATION}Нападает на {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=lfAU30F0}" text="{ISSIMULATION}Набег на {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=houvlYqH}" text="{ISSIMULATION}Берет силой рекрутов {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=Bmb5QRHX}" text="{ISSIMULATION}Берет силой припасы {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=uAVJBLHS}" text="{ISSIMULATION}Осаждает {DEFENDER.NAME} ({DEFENDER.COUNT}) как {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=f7hYjU4D}" text="{ISSIMULATION}Обороняется против {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=5TwT4kNC}" text="{ISSIMULATION}Обороняется против набега {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=GHfQXd9t}" text="{ISSIMULATION}Обороняется против захвата силой рекрутов {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=fJdWDciU}" text="{ISSIMULATION}Обороняется против захвата силой припасов {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Обороняется против осады {ATTACKER.NAME} ({ATTACKER.COUNT}) как {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=v2cwuO3J}" text="В разговоре с {PARTY} как {HERO.NAME}"/>
+    <string id="{=Id6YRNIF}" text="Показывает прошедшее время"/>
+    <string id="{=2HU8nftA}" text="Делиться списком модов"/>
   </strings>
 </base>
