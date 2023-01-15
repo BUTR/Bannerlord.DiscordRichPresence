@@ -15,7 +15,7 @@ namespace Bannerlord.DiscordRichPresence
             { "VERSION", typeof(Settings).Assembly.GetName().Version?.ToString(3) ?? "ERROR" }
         }).ToString();
 
-        [SettingPropertyBool("{=Id6YRNIF}Show Elapsed Time", HintText = "{=GPx0FHT7}Show's how much time has elapsed since teh state changed.", RequireRestart = false)]
+        [SettingPropertyBool("{=Id6YRNIF}Show Elapsed Time", HintText = "{=GPx0FHT7}Shows how much time has elapsed since teh state changed.", RequireRestart = false)]
         public bool ShowElapsedTime { get; set; } = false;
 
         [SettingPropertyBool("{=2HU8nftA}Share Mod List", HintText = "{=jceurQK9}Add a Button that will contain a link to the Mod List.", RequireRestart = false)]
