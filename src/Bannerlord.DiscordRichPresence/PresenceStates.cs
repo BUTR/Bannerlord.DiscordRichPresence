@@ -149,7 +149,11 @@ namespace Bannerlord.DiscordRichPresence
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
             {
+#if v100 || v101 || v102 || v103
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
+#elif v110 
+                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
+#endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
                 MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignAttackingForcingVolunteers.CopyTextObject(),
                 MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignAttackingForcingSupplies.CopyTextObject(),
@@ -179,7 +183,11 @@ namespace Bannerlord.DiscordRichPresence
             // TODO: Signal about it being a player simulation
             var detailsString = (mapEvent.EventType switch
             {
-                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignDefendingGeneral.CopyTextObject(),
+#if v100 || v101 || v102 || v103
+                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
+#elif v110 
+                MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
+#endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),
                 MapEvent.BattleTypes.IsForcingVolunteers => Strings.CampaignDefendingForcingVolunteers.CopyTextObject(),
                 MapEvent.BattleTypes.IsForcingSupplies => Strings.CampaignDefendingForcingSupplies.CopyTextObject(),

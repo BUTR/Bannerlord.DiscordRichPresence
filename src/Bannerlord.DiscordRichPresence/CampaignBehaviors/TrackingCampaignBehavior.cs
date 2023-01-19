@@ -1,7 +1,7 @@
 ﻿using DiscordRPC;
 
 using System;
-
+using System.Collections.Generic;
 using System.Linq;
 
 using TaleWorlds.CampaignSystem;
@@ -44,7 +44,11 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             CampaignEvents.OnMissionEndedEvent.AddNonSerializedListener(this, OnMissionEnded);
 
             CampaignEvents.SetupPreConversationEvent.AddNonSerializedListener(this, OnSetupPreConversation);
+#if v100 || v101 || v102 || v103
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
+#elif v110 
+            CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
+#endif
 
             if (GetCampaignBehavior<CampaignEventsEx>() is { } campaignEventsEx)
             {
@@ -61,7 +65,11 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             }
         }
 
+#if v100 || v101 || v102 || v103
         private void OnConversationEnded(CharacterObject obj)
+#elif v110
+        private void OnConversationEnded(IEnumerable<CharacterObject> objs)
+#endif
         {
             CheckCurrentState();
         }
