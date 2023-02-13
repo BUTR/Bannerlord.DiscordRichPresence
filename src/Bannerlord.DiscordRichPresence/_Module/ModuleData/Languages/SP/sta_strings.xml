@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Español"/>
+  </tags>
+  <strings>
+    <string id="{=1fQo3dBh}" text="Discord Rich Presence {VERSION}"/>
+    <string id="{=meYs0E4y}" text="Obtén la lista de mods"/>
+    <string id="{=JbpAgMpG}" text="Un jugador"/>
+    <string id="{=a7NGHGQ6}" text="Un jugador: Batalla personalizada"/>
+    <string id="{=e7hmqot8}" text="Un jugador: Campaña de Bannerlord"/>
+    <string id="{=5Fd4qhYA}" text="Cargando..."/>
+    <string id="{=aZboLkmT}" text="En el menú principal"/>
+    <string id="{=UrcQjlQ9}" text="En una batalla personalizada"/>
+    <string id="{=AW9YgXO3}" text="En un menú"/>
+    <string id="{=EN0dNwKz}" text="Viajando como {HERO.NAME} cerca de {SETTLEMENT}"/>
+    <string id="{=BcvAuXsH}" text="En {SETTLEMENT}"/>
+    <string id="{=YjyPeo1g}" text="En {LOCATION} en {SETTLEMENT}"/>
+    <string id="{=O4x837Ak}" text="(Simulación) "/>
+    <string id="{=vbS40wdE}" text="{ISSIMULATION}Atacando {DEFENDER.NAME} ({DEFENDER.COUNT}) como {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=lfAU30F0}" text="{ISSIMULATION}Asaltando {DEFENDER.NAME} ({DEFENDER.COUNT}) como {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=houvlYqH}" text="{ISSIMULATION}Forzando voluntarios {DEFENDER.NAME} ({DEFENDER.COUNT}) como {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=Bmb5QRHX}" text="{ISSIMULATION}Incautando suministros {DEFENDER.NAME} ({DEFENDER.COUNT}) como {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=uAVJBLHS}" text="{ISSIMULATION}Asediando {DEFENDER.NAME} ({DEFENDER.COUNT}) como {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=f7hYjU4D}" text="{ISSIMULATION}Defendiéndose contra {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=5TwT4kNC}" text="{ISSIMULATION}Defendiéndose de un asalto de {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=GHfQXd9t}" text="{ISSIMULATION}Defendiéndose de voluntarios forzados de {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=fJdWDciU}" text="{ISSIMULATION}Evitando que se incauten suministros por {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Defendiéndose de un asedio de {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=v2cwuO3J}" text="Hablando con {PARTY} como {HERO.NAME}"/>
+    <string id="{=Id6YRNIF}" text="Mostrar el tiempo transcurrido"/>
+    <string id="{=2HU8nftA}" text="Compartir la lista de mods"/>
+  </strings>
+</base>
