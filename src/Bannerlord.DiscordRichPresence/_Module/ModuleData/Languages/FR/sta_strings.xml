@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Anglais"/>
+  </tags>
+  <strings>
+    <string id="{=1fQo3dBh}" text="Présence riche Discord {VERSION}"/>
+    <string id="{=meYs0E4y}" text="Obtenir la liste des mods"/>
+    <string id="{=JbpAgMpG}" text="Solo"/>
+    <string id="{=a7NGHGQ6}" text="Solo : Bataille personnalisée"/>
+    <string id="{=e7hmqot8}" text="Solo : Campagne Bannerlord"/>
+    <string id="{=5Fd4qhYA}" text="Chargement ..."/>
+    <string id="{=aZboLkmT}" text="Au menu principal"/>
+    <string id="{=UrcQjlQ9}" text="Dans une bataille personnalisée"/>
+    <string id="{=AW9YgXO3}" text="Dans un menu"/>
+    <string id="{=EN0dNwKz}" text="Voyageant en tant que {HERO.NAME} près de {SETTLEMENT}"/>
+    <string id="{=BcvAuXsH}" text="Dans {SETTLEMENT}"/>
+    <string id="{=YjyPeo1g}" text="À {LOCATION} à {SETTLEMENT}"/>
+    <string id="{=O4x837Ak}" text="(Simulation) "/>
+    <string id="{=vbS40wdE}" text="{ISSIMULATION}Attaquer {DEFENDER.NAME} ({DEFENDER.COUNT}) en tant que {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=lfAU30F0}" text="{ISSIMULATION}Piller {DEFENDER.NAME} ({DEFENDER.COUNT}) en tant que {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=houvlYqH}" text="{ISSIMULATION}Forcer les volontaires {DEFENDER.NAME} ({DEFENDER.COUNT}) en tant que {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=Bmb5QRHX}" text="{ISSIMULATION}Forcer le ravitaillement de {DEFENDER.NAME} ({DEFENDER.COUNT}) en tant que {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=uAVJBLHS}" text="{ISSIMULATION}Assiège {DEFENDER.NAME} ({DEFENDER.COUNT}) en tant que {ATTACKER.NAME} ({ATTACKER.COUNT})"/>
+    <string id="{=f7hYjU4D}" text="{ISSIMULATION}Défendre contre {ATTACKER.NAME} ({ATTACKER.COUNT}) en tant que {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=5TwT4kNC}" text="{ISSIMULATION}Défendre contre un raid de {ATTACKER.NAME} ({ATTACKER.COUNT}) en tant que {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=GHfQXd9t}" text="{ISSIMULATION}Défense contre le fait de forcer des volontaires par {ATTACKER.NAME} ({ATTACKER.COUNT}) en tant que {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=fJdWDciU}" text="{ISSIMULATION}Défense contre le ravitaillement forcé par {ATTACKER.NAME} ({ATTACKER.COUNT}) en tant que {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Défendre contre un siège par {ATTACKER.NAME} ({ATTACKER.COUNT}) en tant que {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
+    <string id="{=v2cwuO3J}" text="Parler avec {PARTY} en tant que {HERO.NAME}"/>
+    <string id="{=Id6YRNIF}" text="Afficher le temps écoulé"/>
+    <string id="{=2HU8nftA}" text="Partager la liste des mods"/>
+  </strings>
+</base>
