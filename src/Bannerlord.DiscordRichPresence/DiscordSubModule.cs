@@ -6,6 +6,11 @@ using Bannerlord.ModuleManager;
 
 using DiscordRPC;
 
+using HarmonyLib.BUTR.Extensions;
+
+using MCM.Abstractions.FluentBuilder;
+using MCM.Common;
+
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -20,6 +25,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 
 namespace Bannerlord.DiscordRichPresence
@@ -40,6 +46,10 @@ namespace Bannerlord.DiscordRichPresence
         }
 
         internal static DiscordSubModule Instance { get; private set; } = default!;
+
+        internal static bool ShowElapsedTime { get; private set; }
+        internal static bool ShareModList { get; private set; }
+
 
         private string? _modListUrl;
         public string? ModListUrl
@@ -109,20 +119,26 @@ namespace Bannerlord.DiscordRichPresence
                     Client!.Logger = new MicrosoftLogger(this.GetServiceProvider().GetRequiredService<ILogger<DiscordRpcClient>>()) { Level = DiscordRPC.Logging.LogLevel.Warning };
                 }
 
-                if (Settings.Instance is { } settings)
-                {
-                    settings.PropertyChanged += InstanceOnPropertyChanged;
-                    InstanceOnPropertyChanged(settings, new PropertyChangedEventArgs("LOADING_COMPLETE"));
-                }
+                var settingsBuilder = BaseSettingsBuilder.Create("DiscordRichPresence_v1", new TextObject("{=1fQo3dBh}Discord Rich Presence {VERSION}", new() { { "VERSION", typeof(DiscordSubModule).Assembly.GetName().Version?.ToString(3) ?? "ERROR" } }).ToString())!
+                    .SetFormat("json2")
+                    .SetFolderName("DiscordRichPresence")
+                    .CreateGroup("Default", group => group
+                        .AddBool("show_elapsed_time", "{=Id6YRNIF}Show Elapsed Time", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShowElapsedTime), null), prop => prop
+                            .SetHintText("{=GPx0FHT7}Shows how much time has elapsed since teh state changed.")
+                            .SetRequireRestart(false))
+                        .AddBool("share_mod_list", "{=2HU8nftA}Share Mod List", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShareModList), null), prop => prop
+                            .SetHintText("{=jceurQK9}Add a Button that will contain a link to the Mod List.")
+                            .SetRequireRestart(false)));
+                var settings = settingsBuilder.BuildAsGlobal();
+                settings.Register();
+                settings.PropertyChanged += InstanceOnPropertyChanged;
+                InstanceOnPropertyChanged(settings, new PropertyChangedEventArgs("LOADING_COMPLETE"));
             }
         }
 
         private async void InstanceOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (sender is not Settings settings)
-                return;
-
-            ModListUrl = settings.ShareModList
+            ModListUrl = ShareModList
                 ? await UploadModListAsync()
                 : null;
         }

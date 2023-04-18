@@ -1,0 +1,4 @@
+[submodule "src/discord-rpc-csharp"]
+	path = src/discord-rpc-csharp
+	url = https://github.com/BUTR/discord-rpc-csharp-butr
+	branch = master

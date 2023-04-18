@@ -37,5 +37,11 @@ namespace Bannerlord.DiscordRichPresence
         public static readonly TextObject CampaignDefendingSiege = new("{=FMVm4Ipd}{ISSIMULATION}Defending against a siege by {ATTACKER.NAME} ({ATTACKER.COUNT}) as {DEFENDER.NAME} ({DEFENDER.COUNT})");
 
         public static readonly TextObject CampaignConversation = new("{=v2cwuO3J}Talking with {PARTY} as {HERO.NAME}");
+
+        public static readonly TextObject CampaignInTournament = new("{=dwGkcXaw}In Tournament at {SETTLEMENT}{STATUS}. Round {CURRENTROUND} / {MAXROUND}");
+        public static readonly TextObject CampaignTournamentInMatch = new("{=IBi5G3rf} (In Battle - {HEALTH}% / 100%)");
+        public static readonly TextObject CampaignTournamentEleminated = new("{=pnjja80s} (Eleminated)");
+        public static readonly TextObject CampaignWatchingTournament = new("{=HnCBffWJ}Watching a Tournament at {SETTLEMENT}. Round {CURRENTROUND} / {MAXROUND}");
+
     }
 }

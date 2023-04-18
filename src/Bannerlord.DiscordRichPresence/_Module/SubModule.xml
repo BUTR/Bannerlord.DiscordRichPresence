@@ -10,14 +10,16 @@
   <DependedModules>
     <DependedModule Id="Bannerlord.Harmony" DependentVersion="v$harmonyversion$" />
     <DependedModule Id="Bannerlord.ButterLib" DependentVersion="v$butterlibversion$" />
-    <DependedModule Id="Native" DependentVersion="v$gameversion$" />
+    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v$mcmversion$" />
+    <DependedModule Id="Native" DependentVersion="$gameversion$" />
   </DependedModules>
   <!-- Community Dependency Metadata -->
-  <!-- https://github.com/BUTR/Bannerlord.BUTRLoader#for-modders -->
+  <!-- https://github.com/BUTR/BLSE#for-modders -->
   <DependedModuleMetadatas>
     <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v$harmonyversion$" />
     <DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" version="v$butterlibversion$" />
-    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v$gameversion$.*" />
+    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v$mcmversion$" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="$gameversion$.*" />
   </DependedModuleMetadatas>
   <SubModules>
     <!-- Bannerlord Module Loader. Do not change the name! -->
@@ -27,8 +29,6 @@
       <SubModuleClassType value="Bannerlord.ModuleLoader.$moduleidflat$" />
       <Tags>
         <Tag key="LoaderFilter" value ="$moduleid$.*.dll" />
-        <Tag key="LoaderSubModuleOrder" value ="MCM.MCMSubModule" />
-        <Tag key="LoaderSubModuleOrder" value ="MCM.Internal.MCMImplementationSubModule" />
         <Tag key="LoaderSubModuleOrder" value ="Bannerlord.DiscordRichPresence.DiscordSubModule" />
         <Tag key="LoaderSubModuleOrder" value ="Bannerlord.DiscordRichPresence.TrackingSubModule" />
       </Tags>

@@ -1,11 +1,16 @@
 ﻿using DiscordRPC;
 
+using SandBox.Tournaments.MissionLogics;
+
+using System.Linq;
+
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.CampaignSystem.Settlements.Locations;
 using TaleWorlds.Localization;
+using TaleWorlds.MountAndBlade;
 
 namespace Bannerlord.DiscordRichPresence
 {
@@ -21,7 +26,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -39,7 +44,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -57,7 +62,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerCustomBattle.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -75,7 +80,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -95,7 +100,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -114,7 +119,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -134,7 +139,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -151,7 +156,7 @@ namespace Bannerlord.DiscordRichPresence
             {
 #if v100 || v101 || v102 || v103
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
-#elif v110 
+#elif v110 || v111 || v112 
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
 #endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
@@ -168,7 +173,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -185,7 +190,7 @@ namespace Bannerlord.DiscordRichPresence
             {
 #if v100 || v101 || v102 || v103
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
-#elif v110 
+#elif v110 || v111 || v112 
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
 #endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),
@@ -203,7 +208,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -224,7 +229,40 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Assets = new Assets
+                {
+                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageText = detailsString,
+                },
+                Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
+            };
+        }
+
+        public static RichPresence CampaignTournament(TournamentBehavior tournamentBehavior)
+        {
+            var details = tournamentBehavior.IsPlayerParticipating
+                ? Strings.CampaignInTournament
+                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement.Name)
+                    .SetTextVariable("STATUS", tournamentBehavior.IsPlayerEliminated
+                        ? Strings.CampaignTournamentEleminated
+                        : tournamentBehavior.CurrentMatch.IsPlayerParticipating()
+                            ? Strings.CampaignTournamentInMatch
+                                .SetTextVariable("HEALTH", Mission.Current.Agents.FirstOrDefault(x => x.IsPlayerControlled) is { } player ? (player.Health / player.HealthLimit * 100f) : 0f)
+                            : TextObject.Empty)
+                    .SetTextVariable("CURRENTROUND", tournamentBehavior.CurrentRoundIndex + 1)
+                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds.Length + 1)
+                : Strings.CampaignWatchingTournament
+                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement.Name)
+                    .SetTextVariable("CURRENTROUND", tournamentBehavior.CurrentRoundIndex + 1)
+                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds.Length + 1);
+
+            var detailsString = details.ToString();
+            return new()
+            {
+                Details = Strings.SingleplayerBannerlordCampaign.ToString(),
+                State = detailsString,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,
@@ -242,7 +280,7 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = Settings.Instance?.ShowElapsedTime == true ? Timestamps.Now : null,
+                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
                     LargeImageKey = AssetKeys.Bannerlord,

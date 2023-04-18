@@ -10,7 +10,6 @@ using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
-using TaleWorlds.MountAndBlade;
 
 namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 {
@@ -46,7 +45,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             CampaignEvents.SetupPreConversationEvent.AddNonSerializedListener(this, OnSetupPreConversation);
 #if v100 || v101 || v102 || v103
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
-#elif v110 
+#elif v110 || v111 || v112 
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
 #endif
 
@@ -67,7 +66,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
 #if v100 || v101 || v102 || v103
         private void OnConversationEnded(CharacterObject obj)
-#elif v110
+#elif v110 || v111 || v112
         private void OnConversationEnded(IEnumerable<CharacterObject> objs)
 #endif
         {
