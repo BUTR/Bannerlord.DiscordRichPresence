@@ -1,7 +1,6 @@
 ﻿using DiscordRPC;
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using TaleWorlds.CampaignSystem;
@@ -67,7 +66,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 #if v100 || v101 || v102 || v103
         private void OnConversationEnded(CharacterObject obj)
 #elif v110 || v111 || v112 || v113
-        private void OnConversationEnded(IEnumerable<CharacterObject> objs)
+        private void OnConversationEnded(System.Collections.Generic.IEnumerable<CharacterObject> objs)
 #endif
         {
             CheckCurrentState();

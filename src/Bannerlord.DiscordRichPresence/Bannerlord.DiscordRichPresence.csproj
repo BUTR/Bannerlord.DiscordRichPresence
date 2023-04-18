@@ -17,7 +17,7 @@
     <!-- Module Version -->
     <Version>1.0.1</Version>
     <!-- Module manually override GameVersion -->
-    <!-- <OverrideGameVersion>e1.6.2</OverrideGameVersion> -->
+    <!-- <OverrideGameVersion>v1.1.0</OverrideGameVersion> -->
     <!-- <DefineConstants>$(DefineConstants);BANNERLORDBUTRSHARED_ENABLE_WARNINGS</DefineConstants> -->
 
     <ModListUploadUrl>https://modlist.butr.link/upload</ModListUploadUrl>
@@ -54,15 +54,6 @@
       </AssemblyAttribute>
     </ItemGroup>
     <Warning Condition="$(ModListUploadUrl) == ''" Text="Environment variable 'BANNERLORD_DISCORD_MODLISTUPLOAD_URL' is not set!" />
-  </Target>
-
-  <Target Name="ExtendedMSBuild">
-    <PropertyGroup>
-      <ScriptExecutable>pwsh -noprofile -noninteractive -Command</ScriptExecutable>
-      <ScriptLocation>$(MSBuildThisFileDirectory)\build-fully-msbuild.ps1</ScriptLocation>
-      <ScriptParams>-BasePath '$(ProjectDir)' -OutputPath '$(GameFolder)' -ModuleId '$(ModuleId)' -ProjectPath '$(ProjectPath)' -Configuration '$(Configuration)'</ScriptParams>
-    </PropertyGroup>
-    <Exec Command="$(ScriptExecutable) &quot;$(ScriptLocation) $(ScriptParams)&quot;" LogStandardErrorAsError="True" ContinueOnError="False" />
   </Target>
 
 </Project>
