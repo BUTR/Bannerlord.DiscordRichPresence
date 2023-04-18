@@ -156,7 +156,7 @@ namespace Bannerlord.DiscordRichPresence
             {
 #if v100 || v101 || v102 || v103
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
-#elif v110 || v111 || v112 
+#elif v110 || v111 || v112 || v113
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
 #endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignAttackingRaid.CopyTextObject(),
@@ -190,7 +190,7 @@ namespace Bannerlord.DiscordRichPresence
             {
 #if v100 || v101 || v102 || v103
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout or MapEvent.BattleTypes.AlleyFight => Strings.CampaignAttackingGeneral.CopyTextObject(),
-#elif v110 || v111 || v112 
+#elif v110 || v111 || v112 || v113
                 MapEvent.BattleTypes.FieldBattle or MapEvent.BattleTypes.Hideout => Strings.CampaignAttackingGeneral.CopyTextObject(),
 #endif
                 MapEvent.BattleTypes.Raid => Strings.CampaignDefendingRaid.CopyTextObject(),

@@ -45,7 +45,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             CampaignEvents.SetupPreConversationEvent.AddNonSerializedListener(this, OnSetupPreConversation);
 #if v100 || v101 || v102 || v103
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
-#elif v110 || v111 || v112 
+#elif v110 || v111 || v112 || v113
             CampaignEvents.ConversationEnded.AddNonSerializedListener(this, OnConversationEnded);
 #endif
 
@@ -66,7 +66,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
 #if v100 || v101 || v102 || v103
         private void OnConversationEnded(CharacterObject obj)
-#elif v110 || v111 || v112
+#elif v110 || v111 || v112 || v113
         private void OnConversationEnded(IEnumerable<CharacterObject> objs)
 #endif
         {
