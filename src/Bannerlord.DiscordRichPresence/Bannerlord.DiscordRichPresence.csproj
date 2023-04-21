@@ -1,10 +1,6 @@
 ﻿<Project Sdk="Bannerlord.BUTRModule.Sdk/1.1.0.100">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>9.0</LangVersion>
-    <Nullable>enable</Nullable>
-    <Platforms>x64</Platforms>
     <BuildForWindows>true</BuildForWindows>
     <BuildForWindowsStore>true</BuildForWindowsStore>
     
@@ -15,12 +11,12 @@
     <!-- Module Url -->
     <ModuleUrl>https://www.nexusmods.com/mountandblade2bannerlord/mods/3666</ModuleUrl>
     <!-- Module Version -->
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <!-- Module manually override GameVersion -->
     <!-- <OverrideGameVersion>v1.1.0</OverrideGameVersion> -->
     <!-- <DefineConstants>$(DefineConstants);BANNERLORDBUTRSHARED_ENABLE_WARNINGS</DefineConstants> -->
 
-    <ModListUploadUrl>https://modlist.butr.link/upload</ModListUploadUrl>
+    <ModListUploadUrl>$(BANNERLORD_DISCORD_MODLISTUPLOAD_URL)</ModListUploadUrl>
   </PropertyGroup>
 
   <!-- Development Variables -->

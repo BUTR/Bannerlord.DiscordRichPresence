@@ -243,19 +243,19 @@ namespace Bannerlord.DiscordRichPresence
         {
             var details = tournamentBehavior.IsPlayerParticipating
                 ? Strings.CampaignInTournament
-                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement.Name)
+                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement?.Name ?? TextObject.Empty)
                     .SetTextVariable("STATUS", tournamentBehavior.IsPlayerEliminated
                         ? Strings.CampaignTournamentEleminated
-                        : tournamentBehavior.CurrentMatch.IsPlayerParticipating()
+                        : tournamentBehavior.CurrentMatch?.IsPlayerParticipating() == true
                             ? Strings.CampaignTournamentInMatch
-                                .SetTextVariable("HEALTH", Mission.Current.Agents.FirstOrDefault(x => x.IsPlayerControlled) is { } player ? (player.Health / player.HealthLimit * 100f) : 0f)
+                                .SetTextVariable("HEALTH", Mission.Current?.Agents?.FirstOrDefault(x => x.IsPlayerControlled) is { } player ? (player.Health / player.HealthLimit * 100f) : 0f)
                             : TextObject.Empty)
                     .SetTextVariable("CURRENTROUND", tournamentBehavior.CurrentRoundIndex + 1)
-                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds.Length + 1)
+                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds?.Length ?? 0 + 1)
                 : Strings.CampaignWatchingTournament
-                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement.Name)
+                    .SetTextVariable("SETTLEMENT", tournamentBehavior.Settlement?.Name ?? TextObject.Empty)
                     .SetTextVariable("CURRENTROUND", tournamentBehavior.CurrentRoundIndex + 1)
-                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds.Length + 1);
+                    .SetTextVariable("MAXROUND", tournamentBehavior.Rounds?.Length ?? 0 + 1);
 
             var detailsString = details.ToString();
             return new()
