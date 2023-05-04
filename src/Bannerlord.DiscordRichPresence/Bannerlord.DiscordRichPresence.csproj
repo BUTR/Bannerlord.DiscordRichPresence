@@ -17,6 +17,7 @@
     <!-- <DefineConstants>$(DefineConstants);BANNERLORDBUTRSHARED_ENABLE_WARNINGS</DefineConstants> -->
 
     <ModListUploadUrl>$(BANNERLORD_DISCORD_MODLISTUPLOAD_URL)</ModListUploadUrl>
+    <AvatarUploadUrl>$(BANNERLORD_DISCORD_AVATAR_URL)</AvatarUploadUrl>
   </PropertyGroup>
 
   <!-- Development Variables -->
@@ -48,8 +49,13 @@
         <_Parameter1>ModListUploadUrl</_Parameter1>
         <_Parameter2>$(ModListUploadUrl)</_Parameter2>
       </AssemblyAttribute>
+      <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+        <_Parameter1>AvatarUploadUrl</_Parameter1>
+        <_Parameter2>$(AvatarUploadUrl)</_Parameter2>
+      </AssemblyAttribute>
     </ItemGroup>
     <Warning Condition="$(ModListUploadUrl) == ''" Text="Environment variable 'BANNERLORD_DISCORD_MODLISTUPLOAD_URL' is not set!" />
+    <Warning Condition="$(AvatarUploadUrl) == ''" Text="Environment variable 'BANNERLORD_DISCORD_AVATAR_URL' is not set!" />
   </Target>
 
 </Project>

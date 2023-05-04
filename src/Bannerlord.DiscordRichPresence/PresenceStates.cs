@@ -16,7 +16,9 @@ namespace Bannerlord.DiscordRichPresence
 {
     internal static class PresenceStates
     {
+        public static bool ShowElapsedTime => DiscordSubModule.ShowElapsedTime;
         public static string? ModListUrl => DiscordSubModule.Instance.ModListUrl;
+        public static string? AvatarUrl => DiscordSubModule.Instance.AvatarUrl;
 
         public static RichPresence Loading()
         {
@@ -26,10 +28,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -44,10 +46,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.Singleplayer.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -62,10 +64,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerCustomBattle.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -80,10 +82,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -100,10 +102,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -119,10 +121,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -139,10 +141,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -173,10 +175,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -208,10 +210,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -229,10 +231,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -262,10 +264,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
@@ -280,10 +282,10 @@ namespace Bannerlord.DiscordRichPresence
             {
                 Details = Strings.SingleplayerBannerlordCampaign.ToString(),
                 State = detailsString,
-                Timestamps = DiscordSubModule.ShowElapsedTime ? Timestamps.Now : null,
+                Timestamps = ShowElapsedTime ? Timestamps.Now : null,
                 Assets = new Assets
                 {
-                    LargeImageKey = AssetKeys.Bannerlord,
+                    LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,

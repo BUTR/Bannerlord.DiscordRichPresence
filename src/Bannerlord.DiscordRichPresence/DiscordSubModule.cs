@@ -69,6 +69,25 @@ namespace Bannerlord.DiscordRichPresence
                 }
             }
         }
+        
+        private string? _avatarUrl;
+        public string? AvatarUrl
+        {
+            get => _avatarUrl;
+            set
+            {
+                if (_avatarUrl != value)
+                {
+                    _avatarUrl = $"mp:{value}";
+
+                    if (_currentPresence is { } presence)
+                    {
+                        presence.Assets.LargeImageKey = _avatarUrl;
+                        SetPresence(_currentPresence, false);
+                    }
+                }
+            }
+        }
 
         private bool ServiceRegistrationWasCalled { get; set; }
         private bool DelayedServiceCreation { get; set; }
