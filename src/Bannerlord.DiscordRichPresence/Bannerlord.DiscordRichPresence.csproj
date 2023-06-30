@@ -1,4 +1,4 @@
-﻿<Project Sdk="Bannerlord.BUTRModule.Sdk/1.1.0.100">
+﻿<Project Sdk="Bannerlord.BUTRModule.Sdk/1.1.0.102">
 
   <PropertyGroup>
     <BuildForWindows>true</BuildForWindows>
@@ -11,7 +11,7 @@
     <!-- Module Url -->
     <ModuleUrl>https://www.nexusmods.com/mountandblade2bannerlord/mods/3666</ModuleUrl>
     <!-- Module Version -->
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <!-- Module manually override GameVersion -->
     <!-- <OverrideGameVersion>v1.1.0</OverrideGameVersion> -->
     <!-- <DefineConstants>$(DefineConstants);BANNERLORDBUTRSHARED_ENABLE_WARNINGS</DefineConstants> -->
@@ -23,20 +23,21 @@
   <!-- Development Variables -->
   <PropertyGroup>
     <HarmonyVersion>2.2.2</HarmonyVersion>
-    <ButterLibVersion>2.8.0</ButterLibVersion>
-    <MCMVersion>5.7.1</MCMVersion>
+    <ButterLibVersion>2.8.1</ButterLibVersion>
+    <MCMVersion>5.7.2</MCMVersion>
     <BUTRModuleLoaderVersion>1.0.1.44</BUTRModuleLoaderVersion>
     <HarmonyExtensionsVersion>3.2.0.77</HarmonyExtensionsVersion>
     <BUTRSharedVersion>3.0.0.136</BUTRSharedVersion>
-    <BUTRModuleManagerVersion>5.0.198</BUTRModuleManagerVersion>
+    <BUTRModuleManagerVersion>5.0.209</BUTRModuleManagerVersion>
   </PropertyGroup>
 
   <PropertyGroup>
     <DisableReferenceAssemblies>true</DisableReferenceAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Bannerlord.ReferenceAssemblies.Core" Version="$(GameVersion).*-*" IncludeAssets="compile" GeneratePathProperty="true" />
-    <PackageReference Include="Bannerlord.ReferenceAssemblies.SandBox" Version="$(GameVersion).*-*" IncludeAssets="compile" GeneratePathProperty="true" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.Core" Version="$(GameVersion).*-*" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.Native" Version="$(GameVersion).*-*" />
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.SandBox" Version="$(GameVersion).*-*" />
   </ItemGroup>
 
   <ItemGroup>

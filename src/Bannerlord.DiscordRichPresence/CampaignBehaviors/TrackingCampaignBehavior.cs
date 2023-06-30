@@ -1,4 +1,6 @@
-﻿using DiscordRPC;
+﻿using Bannerlord.DiscordRichPresence.Utils;
+
+using DiscordRPC;
 
 using System;
 using System.Linq;
@@ -9,6 +11,7 @@ using TaleWorlds.CampaignSystem.MapEvents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade.View.Tableaus;
 
 namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 {
@@ -65,8 +68,10 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
 #if v100 || v101 || v102 || v103
         private void OnConversationEnded(CharacterObject obj)
-#elif v110 || v111 || v112 || v113
+#elif v110 || v111 || v112 || v113 || v114 || v115 || v120
         private void OnConversationEnded(System.Collections.Generic.IEnumerable<CharacterObject> objs)
+#else
+#error SET VERSION
 #endif
         {
             CheckCurrentState();
@@ -74,7 +79,8 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
         private void OnGameLoaded(CampaignGameStarter gameStarter)
         {
-            //TableauCacheManager.Current.BeginCreateCharacterTexture(CharacterCode.CreateFrom(Hero.MainHero.CharacterObject), AvatarUploader.UploadTexture, false);
+            TableauCacheManager.Current.BeginCreateCharacterTexture(CharacterCode.CreateFrom(Hero.MainHero.CharacterObject), AvatarUploader.UploadCharacterTexture, isBig: true);
+            //TableauCacheManager.Current.BeginCreateBannerTexture(BannerCode.CreateFrom(Hero.MainHero.ClanBanner), AvatarUploader.UploadBannerTexture);
 
             CheckCurrentState();
         }
@@ -104,6 +110,8 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
 
         private void OnPlayerCharacterChanged(Hero oldPlayer, Hero newPlayer, MobileParty newMainParty, bool isMainPartyChanged)
         {
+            TableauCacheManager.Current.BeginCreateCharacterTexture(CharacterCode.CreateFrom(newPlayer.CharacterObject), AvatarUploader.UploadCharacterTexture, isBig: true);
+
             CheckCurrentState();
         }
 

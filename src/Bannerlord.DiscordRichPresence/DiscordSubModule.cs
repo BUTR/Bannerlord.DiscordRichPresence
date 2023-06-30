@@ -69,7 +69,7 @@ namespace Bannerlord.DiscordRichPresence
                 }
             }
         }
-        
+
         private string? _avatarUrl;
         public string? AvatarUrl
         {
@@ -78,11 +78,31 @@ namespace Bannerlord.DiscordRichPresence
             {
                 if (_avatarUrl != value)
                 {
-                    _avatarUrl = $"mp:{value}";
+                    _avatarUrl = value;
 
                     if (_currentPresence is { } presence)
                     {
                         presence.Assets.LargeImageKey = _avatarUrl;
+                        SetPresence(_currentPresence, false);
+                    }
+                }
+            }
+        }
+
+
+        private string? _bannerUrl;
+        public string? BannerUrl
+        {
+            get => _bannerUrl;
+            set
+            {
+                if (_bannerUrl != value)
+                {
+                    _bannerUrl = value;
+
+                    if (_currentPresence is { } presence)
+                    {
+                        presence.Assets.SmallImageKey = _bannerUrl;
                         SetPresence(_currentPresence, false);
                     }
                 }
@@ -142,10 +162,10 @@ namespace Bannerlord.DiscordRichPresence
                     .SetFormat("json2")
                     .SetFolderName("DiscordRichPresence")
                     .CreateGroup("Default", group => group
-                        .AddBool("show_elapsed_time", "{=Id6YRNIF}Show Elapsed Time", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShowElapsedTime), null), prop => prop
+                        .AddBool("show_elapsed_time", "{=Id6YRNIF}Show Elapsed Time", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShowElapsedTime)!, null!), prop => prop
                             .SetHintText("{=GPx0FHT7}Shows how much time has elapsed since teh state changed.")
                             .SetRequireRestart(false))
-                        .AddBool("share_mod_list", "{=2HU8nftA}Share Mod List", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShareModList), null), prop => prop
+                        .AddBool("share_mod_list", "{=2HU8nftA}Share Mod List", new PropertyRef(SymbolExtensions2.GetPropertyInfo(() => ShareModList)!, null!), prop => prop
                             .SetHintText("{=jceurQK9}Add a Button that will contain a link to the Mod List.")
                             .SetRequireRestart(false)));
                 var settings = settingsBuilder.BuildAsGlobal();

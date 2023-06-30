@@ -12,6 +12,7 @@
     <DependedModule Id="Bannerlord.ButterLib" DependentVersion="v$butterlibversion$" />
     <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v$mcmversion$" />
     <DependedModule Id="Native" DependentVersion="$gameversion$" />
+    <DependedModule Id="Sandbox" DependentVersion="$gameversion$" />
   </DependedModules>
   <!-- Community Dependency Metadata -->
   <!-- https://github.com/BUTR/BLSE#for-modders -->
@@ -20,6 +21,7 @@
     <DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" version="v$butterlibversion$" />
     <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v$mcmversion$" />
     <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="$gameversion$.*" />
+    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" version="$gameversion$.*" />
   </DependedModuleMetadatas>
   <SubModules>
     <!-- Bannerlord Module Loader. Do not change the name! -->

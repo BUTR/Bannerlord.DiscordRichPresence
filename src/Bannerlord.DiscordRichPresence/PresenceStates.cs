@@ -19,6 +19,7 @@ namespace Bannerlord.DiscordRichPresence
         public static bool ShowElapsedTime => DiscordSubModule.ShowElapsedTime;
         public static string? ModListUrl => DiscordSubModule.Instance.ModListUrl;
         public static string? AvatarUrl => DiscordSubModule.Instance.AvatarUrl;
+        public static string? BannerUrl => DiscordSubModule.Instance.BannerUrl;
 
         public static RichPresence Loading()
         {
@@ -32,7 +33,8 @@ namespace Bannerlord.DiscordRichPresence
                 Assets = new Assets
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
-                    LargeImageText = detailsString
+                    LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -51,6 +53,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -69,6 +72,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -87,6 +91,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -107,6 +112,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -126,6 +132,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -146,6 +153,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -180,6 +188,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -215,6 +224,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -236,6 +246,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -269,6 +280,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
@@ -287,6 +299,7 @@ namespace Bannerlord.DiscordRichPresence
                 {
                     LargeImageKey = AvatarUrl ?? AssetKeys.Bannerlord,
                     LargeImageText = detailsString,
+                    SmallImageKey = BannerUrl,
                 },
                 Buttons = ModListUrl is not null ? new[] { new Button { Label = Strings.GetModList.ToString(), Url = ModListUrl } } : null,
             };
