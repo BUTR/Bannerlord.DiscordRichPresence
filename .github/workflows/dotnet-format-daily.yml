@@ -13,5 +13,5 @@ jobs:
       - name: Code Formatting
         uses: butr/actions-code-format-setup@v1
         with:
-          workspace: "src/Bannerlord.DiscordRichPresence.sln"
+          workspace: "src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj"
           github-token: ${{ secrets.GITHUB_TOKEN }}
