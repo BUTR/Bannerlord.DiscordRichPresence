@@ -236,7 +236,7 @@ namespace Bannerlord.DiscordRichPresence.CampaignBehaviors
             if (Settlement.All == null || Settlement.All.Count == 0)
                 return null;
 
-            if (hero.CurrentSettlement is {IsHideout: false} heroSettlement)
+            if (hero.CurrentSettlement is { IsHideout: false } heroSettlement)
                 return heroSettlement;
 
             if (!hero.IsActive && !hero.IsWanderer)
