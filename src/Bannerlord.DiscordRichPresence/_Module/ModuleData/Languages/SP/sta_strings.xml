@@ -30,5 +30,9 @@
     <string id="{=v2cwuO3J}" text="Hablando con {PARTY} como {HERO.NAME}"/>
     <string id="{=Id6YRNIF}" text="Mostrar el tiempo transcurrido"/>
     <string id="{=2HU8nftA}" text="Compartir la lista de mods"/>
+    <string id="{=dwGkcXaw}" text="En un torneo en {SETTLEMENT}{STATUS}. Ronda {CURRENTROUND} / {MAXROUND}"/>
+    <string id="{=IBi5G3rf}" text=" (En batalla - {HEALTH}% / 100%)"/>
+    <string id="{=pnjja80s}" text=" (Eliminado)"/>
+    <string id="{=HnCBffWJ}" text="Viendo un torneo en {SETTLEMENT}. Ronda {CURRENTROUND} / {MAXROUND}"/>
   </strings>
 </base>
