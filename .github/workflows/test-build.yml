@@ -40,18 +40,18 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Setup .NET Core
+    - name: Setup .NET
       uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
 
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.3
+      uses: microsoft/setup-msbuild@v2
       with:
         msbuild-architecture: x64
 
     - name: Build DiscordRichPresence for test
       run: >-
           dotnet restore src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj;
-          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /t:ExtendedMSBuild /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
+          msbuild src/Bannerlord.DiscordRichPresence/Bannerlord.DiscordRichPresence.csproj /p:configuration=Release /p:GameFolder="$PWD/bannerlord";
       shell: pwsh

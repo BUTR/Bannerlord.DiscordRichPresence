@@ -11,7 +11,7 @@
     <!-- Module Url -->
     <ModuleUrl>https://www.nexusmods.com/mountandblade2bannerlord/mods/3666</ModuleUrl>
     <!-- Module Version -->
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <!-- Module manually override GameVersion -->
     <!-- <OverrideGameVersion>v1.1.0</OverrideGameVersion> -->
     <!-- <DefineConstants>$(DefineConstants);BANNERLORDBUTRSHARED_ENABLE_WARNINGS</DefineConstants> -->
@@ -22,13 +22,13 @@
 
   <!-- Development Variables -->
   <PropertyGroup>
-    <HarmonyVersion>2.2.2</HarmonyVersion>
-    <ButterLibVersion>2.8.1</ButterLibVersion>
-    <MCMVersion>5.7.2</MCMVersion>
+    <HarmonyVersion>2.3.0</HarmonyVersion>
+    <ButterLibVersion>2.9.9</ButterLibVersion>
+    <MCMVersion>5.10.1</MCMVersion>
     <BUTRModuleLoaderVersion>1.0.1.44</BUTRModuleLoaderVersion>
     <HarmonyExtensionsVersion>3.2.0.77</HarmonyExtensionsVersion>
-    <BUTRSharedVersion>3.0.0.136</BUTRSharedVersion>
-    <BUTRModuleManagerVersion>5.0.209</BUTRModuleManagerVersion>
+    <BUTRSharedVersion>3.0.0.142</BUTRSharedVersion>
+    <BUTRModuleManagerVersion>5.0.226</BUTRModuleManagerVersion>
   </PropertyGroup>
 
   <PropertyGroup>
