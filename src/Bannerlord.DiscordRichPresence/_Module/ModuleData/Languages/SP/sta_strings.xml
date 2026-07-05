@@ -5,7 +5,7 @@
   </tags>
   <strings>
     <string id="{=1fQo3dBh}" text="Discord Rich Presence {VERSION}"/>
-    <string id="{=meYs0E4y}" text="Obtén la lista de mods"/>
+    <string id="{=meYs0E4y}" text="Obtén lista de mods"/>
     <string id="{=JbpAgMpG}" text="Un jugador"/>
     <string id="{=a7NGHGQ6}" text="Un jugador: Batalla personalizada"/>
     <string id="{=e7hmqot8}" text="Un jugador: Campaña de Bannerlord"/>
@@ -28,8 +28,8 @@
     <string id="{=fJdWDciU}" text="{ISSIMULATION}Evitando que se incauten suministros por {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
     <string id="{=FMVm4Ipd}" text="{ISSIMULATION}Defendiéndose de un asedio de {ATTACKER.NAME} ({ATTACKER.COUNT}) como {DEFENDER.NAME} ({DEFENDER.COUNT})"/>
     <string id="{=v2cwuO3J}" text="Hablando con {PARTY} como {HERO.NAME}"/>
-    <string id="{=Id6YRNIF}" text="Mostrar el tiempo transcurrido"/>
-    <string id="{=2HU8nftA}" text="Compartir la lista de mods"/>
+    <string id="{=Id6YRNIF}" text="Mostrar tiempo transcurrido"/>
+    <string id="{=2HU8nftA}" text="Compartir lista de mods"/>
     <string id="{=dwGkcXaw}" text="En un torneo en {SETTLEMENT}{STATUS}. Ronda {CURRENTROUND} / {MAXROUND}"/>
     <string id="{=IBi5G3rf}" text=" (En batalla - {HEALTH}% / 100%)"/>
     <string id="{=pnjja80s}" text=" (Eliminado)"/>
